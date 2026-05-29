@@ -83,34 +83,115 @@ export default function HeroBanner({ activeProfile }) {
           backgroundImage: `url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1600&q=80')`
         }}
       >
-        <div className="hero-content">
-          <div className="hero-badge-row">
-            <span className="hero-badge-match">99.8% Match</span>
-            <span className="hero-badge-tag">2026</span>
-            <span className="hero-badge-tag">2 Seasons</span>
-            <span className="hero-badge-tag" style={{ borderColor: '#e50914', color: '#e50914', fontWeight: 800 }}>Ultra 4K</span>
+        <div className="hero-content" style={{ marginTop: '70px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          
+          {/* Tribute Series Badge */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '8px', 
+            marginBottom: '1rem', 
+            textTransform: 'uppercase', 
+            letterSpacing: '0.25em', 
+            fontSize: '0.8rem', 
+            fontWeight: '800', 
+            color: '#e50914' 
+          }}>
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              width: '20px', 
+              height: '20px', 
+              backgroundColor: '#e50914', 
+              color: '#000', 
+              borderRadius: '2px', 
+              fontSize: '0.85rem', 
+              fontWeight: '900',
+              fontFamily: 'var(--font-outfit)',
+              letterSpacing: 'normal',
+              marginRight: '2px'
+            }}>N</span> TRIBUTE SERIES
+          </div>
+
+          {/* Cinematic Title Layout */}
+          <h1 className="hero-title" style={{ 
+            fontFamily: "'Cormorant Garamond', 'Georgia', serif", 
+            fontSize: '3.6rem', 
+            lineHeight: '1.05', 
+            fontWeight: '400',
+            textTransform: 'uppercase',
+            marginBottom: '1.5rem',
+            textAlign: 'left',
+            letterSpacing: '0.02em',
+            textShadow: '2px 2px 8px rgba(0,0,0,0.8)'
+          }}>
+            The Greatest<br />
+            Story<br />
+            Ever Told: <span style={{ 
+              color: '#e50914', 
+              fontFamily: 'var(--font-outfit), sans-serif', 
+              fontWeight: '900',
+              textShadow: '0 0 15px rgba(229, 9, 20, 0.6)',
+              letterSpacing: '-0.02em'
+            }}>US</span>
+          </h1>
+
+          {/* Metadata Row */}
+          <div className="hero-badge-row" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.25rem', fontSize: '0.9rem' }}>
+            <span className="hero-badge-match" style={{ color: '#4ade80', fontWeight: '700' }}>99% Match</span>
+            <span style={{ color: '#fff', fontWeight: '500' }}>2026</span>
+            <span style={{ border: '1px solid rgba(255,255,255,0.4)', padding: '1px 5px', fontSize: '0.7rem', borderRadius: '2.5px', color: '#fff', fontWeight: '700' }}>U/A 16+</span>
+            <span style={{ color: '#fff', fontWeight: '500' }}>2 Seasons</span>
+            <span style={{ border: '1px solid rgba(255,255,255,0.4)', padding: '1px 5px', fontSize: '0.7rem', borderRadius: '2.5px', color: '#fff', fontWeight: '700', textTransform: 'uppercase' }}>ultra HD 4K</span>
+            <span style={{ border: '1px solid rgba(255,255,255,0.4)', padding: '1px 5px', fontSize: '0.7rem', borderRadius: '2.5px', color: '#fff', fontWeight: '700', textTransform: 'uppercase' }}>HDR</span>
           </div>
           
-          <h1 className="hero-title glow-text" style={{ textTransform: 'uppercase' }}>
-            Our Love Story
-          </h1>
-          
-          <p className="hero-desc">
-            A lifetime of shared laughter, midnight drives, comforting coffee cups, and the greatest adventures. A CoupleFlix Original Series streaming in our hearts forever.
+          {/* Description */}
+          <p className="hero-desc" style={{ 
+            fontSize: '1rem', 
+            lineHeight: '1.5', 
+            color: '#d4d4d4', 
+            marginBottom: '2rem', 
+            maxWidth: '550px',
+            textShadow: '1px 1px 3px rgba(0,0,0,0.8)'
+          }}>
+            An emotional, biographical documentary celebrating the shared adventures, late-night talks, and inside jokes of the ultimate dream team. Now streaming in each other's hearts forever.
           </p>
           
+          {/* Action Buttons */}
           <div className="hero-buttons">
-            <button className="hero-btn hero-btn-play" onClick={() => { setShowSlideshow(true); setCurrentSlide(0); }}>
+            <button className="hero-btn hero-btn-play" onClick={() => { setShowSlideshow(true); setCurrentSlide(0); }} style={{
+              backgroundColor: '#fff',
+              color: '#000',
+              fontWeight: '700',
+              padding: '0.65rem 1.8rem',
+              fontSize: '1rem',
+              borderRadius: '4px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
               {/* Play SVG Icon */}
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z"/>
               </svg>
-              Play Memory Reel
+              Play Memories
             </button>
             
-            <button className="hero-btn hero-btn-info" onClick={() => setShowInfoModal(true)}>
+            <button className="hero-btn hero-btn-info" onClick={() => setShowInfoModal(true)} style={{
+              backgroundColor: 'rgba(109, 109, 110, 0.7)',
+              color: '#fff',
+              fontWeight: '700',
+              padding: '0.65rem 1.8rem',
+              fontSize: '1rem',
+              borderRadius: '4px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
               {/* Info SVG Icon */}
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
               </svg>
               More Info
