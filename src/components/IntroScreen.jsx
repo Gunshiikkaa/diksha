@@ -6,21 +6,33 @@ export default function IntroScreen({ onProfileSelect }) {
   const profiles = [
     {
       name: 'Sachin',
-      avatarColor: '#1e40af', // Deep blue
-      emoji: '👔',
-      avatarImg: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'
+      letter: 'S',
+      gradient: 'linear-gradient(135deg, #1e40af, #3b82f6)', // Blue/indigo gradient
+      badgeText: '👔 HE',
+      badgeColor: '#1d4ed8',
+      role: 'THE BOYFRIEND 👔',
+      avatarColor: '#1e40af',
+      emoji: '👔'
     },
     {
       name: 'Gunshika',
-      avatarColor: '#be185d', // Deep pink
-      emoji: '👑',
-      avatarImg: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'
+      letter: 'G',
+      gradient: 'linear-gradient(135deg, #be185d, #ec4899)', // Red/pink gradient
+      badgeText: '👑 SHE',
+      badgeColor: '#db2777',
+      role: 'THE GIRLFRIEND 👑',
+      avatarColor: '#be185d',
+      emoji: '👑'
     },
     {
       name: 'Both ❤️',
-      avatarColor: '#b45309', // Amber
-      emoji: '💖',
-      avatarImg: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=150&q=80'
+      letter: '❤️',
+      gradient: 'linear-gradient(135deg, #b45309, #f59e0b)', // Amber/orange gradient
+      badgeText: '💖 US',
+      badgeColor: '#d97706',
+      role: 'THE COUPLE 💖',
+      avatarColor: '#b45309',
+      emoji: '💖'
     }
   ];
 
@@ -51,7 +63,6 @@ export default function IntroScreen({ onProfileSelect }) {
       osc2.frequency.setValueAtTime(85, now + 0.12);
       osc2.frequency.exponentialRampToValueAtTime(45, now + 0.38);
       
-      // Lowpass filter to make the thud sound deep and warm
       const lp = ctx.createBiquadFilter();
       lp.type = 'lowpass';
       lp.frequency.setValueAtTime(150, now);
@@ -66,7 +77,6 @@ export default function IntroScreen({ onProfileSelect }) {
       osc2.stop(now + 0.38);
       
       // 3. String pad / Synth rise at 0.12s
-      // C minor / C major hybrid cinematic chord: C2, G2, C3, D#3/E3, G3, C4, D4
       const frequencies = [65.41, 130.81, 196.00, 261.63, 311.13, 392.00, 523.25, 587.33]; 
       
       frequencies.forEach((freq, idx) => {
@@ -74,8 +84,6 @@ export default function IntroScreen({ onProfileSelect }) {
         const gain = ctx.createGain();
         osc.type = 'sawtooth';
         osc.frequency.value = freq;
-        
-        // Detune oscillators to create a thick chorus effect
         osc.detune.value = (idx - 3.5) * 6; 
         
         const filter = ctx.createBiquadFilter();
@@ -84,8 +92,8 @@ export default function IntroScreen({ onProfileSelect }) {
         filter.frequency.exponentialRampToValueAtTime(1000 + idx * 80, now + 1.2);
         
         gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(0.18, now + 0.25); // Rise
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 2.2); // Decay
+        gain.gain.linearRampToValueAtTime(0.18, now + 0.25);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 2.2);
         
         osc.connect(filter);
         filter.connect(gain);
@@ -102,7 +110,6 @@ export default function IntroScreen({ onProfileSelect }) {
   const handleSelect = (profile) => {
     playTadum();
     setIsFading(true);
-    // Allow animation and audio chime to play out slightly before transition
     setTimeout(() => {
       onProfileSelect(profile);
     }, 1200);
@@ -112,46 +119,133 @@ export default function IntroScreen({ onProfileSelect }) {
     <div className="profile-container" style={{
       opacity: isFading ? 0 : 1,
       transition: 'opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-      pointerEvents: isFading ? 'none' : 'auto'
+      pointerEvents: isFading ? 'none' : 'auto',
+      backgroundColor: '#000'
     }}>
       <div className="cinema-vignette"></div>
       <div className="film-grain"></div>
 
       <div style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
-        <h1 className="profile-title" style={{ fontFamily: 'var(--font-outfit)', fontWeight: 500 }}>
+        <h1 style={{ 
+          fontFamily: 'var(--font-outfit)', 
+          fontWeight: 600, 
+          fontSize: '3.5rem', 
+          marginBottom: '0.2rem',
+          color: '#fff'
+        }}>
           Who's watching?
         </h1>
         
-        <div className="profile-list">
+        <p style={{
+          color: '#808080',
+          letterSpacing: '0.15em',
+          fontSize: '0.8rem',
+          fontFamily: 'var(--font-outfit)',
+          textTransform: 'uppercase',
+          marginBottom: '3rem'
+        }}>
+          Choose a profile to start streaming memories
+        </p>
+        
+        <div className="profile-list" style={{ gap: '3rem' }}>
           {profiles.map((profile) => (
             <div 
               key={profile.name} 
               className="profile-card"
               onClick={() => handleSelect(profile)}
+              style={{ width: '150px' }}
             >
+              {/* Profile Card Box */}
               <div 
                 className="profile-avatar-wrapper"
-                style={{ backgroundColor: profile.avatarColor }}
-              >
-                <div style={{
-                  width: '100%',
-                  height: '100%',
+                style={{ 
+                  background: profile.gradient,
+                  width: '130px',
+                  height: '130px',
+                  borderRadius: '6px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '3.2rem',
+                  position: 'relative'
+                }}
+              >
+                {/* Large Center Character */}
+                <div style={{
+                  fontSize: profile.letter === '❤️' ? '3rem' : '4.5rem',
+                  fontWeight: '900',
+                  color: '#000000',
                   userSelect: 'none',
-                  backgroundColor: 'rgba(0,0,0,0.1)'
+                  fontFamily: 'var(--font-outfit)'
                 }}>
-                  {profile.emoji}
+                  {profile.letter}
+                </div>
+
+                {/* Bottom Right Pill Badge */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '8px',
+                  right: '8px',
+                  backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '4px',
+                  padding: '2px 6px',
+                  fontSize: '0.65rem',
+                  fontWeight: '800',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  letterSpacing: '0.05em'
+                }}>
+                  {profile.badgeText}
                 </div>
               </div>
-              <span className="profile-name">{profile.name}</span>
+
+              {/* Profile Text Details underneath */}
+              <span className="profile-name" style={{ 
+                color: '#fff', 
+                fontWeight: '600', 
+                fontSize: '1.1rem',
+                marginTop: '0.5rem',
+                display: 'block'
+              }}>
+                {profile.name}
+              </span>
+              
+              <span style={{
+                color: '#808080',
+                fontSize: '0.7rem',
+                letterSpacing: '0.05em',
+                fontFamily: 'var(--font-outfit)',
+                marginTop: '0.2rem',
+                display: 'block'
+              }}>
+                {profile.role}
+              </span>
             </div>
           ))}
         </div>
 
-        <button className="manage-profiles-btn">
+        <button className="manage-profiles-btn" style={{
+          marginTop: '2rem',
+          border: '1px solid #444',
+          color: '#555',
+          fontSize: '0.85rem',
+          letterSpacing: '0.15em',
+          padding: '0.6rem 2rem',
+          backgroundColor: 'transparent',
+          fontFamily: 'var(--font-outfit)',
+          transition: 'all 0.2s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = '#fff';
+          e.currentTarget.style.borderColor = '#fff';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = '#555';
+          e.currentTarget.style.borderColor = '#444';
+        }}
+        >
           Manage Profiles
         </button>
       </div>
