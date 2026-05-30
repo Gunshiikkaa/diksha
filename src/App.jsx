@@ -7,7 +7,7 @@ import Timeline from './components/Timeline';
 import DatePlanner from './components/DatePlanner';
 import MemoryVault from './components/MemoryVault';
 import SecretLetter from './components/SecretLetter';
-import GalleryWall from './components/GalleryWall';
+
 import CinematicEnding from './components/CinematicEnding';
 import './App.css';
 
@@ -39,38 +39,7 @@ export default function App() {
     localStorage.getItem('spotlightImage') || "/couple_sunset_date.png"
   );
 
-  const [galleryCards, setGalleryCards] = useState(() => {
-    const saved = localStorage.getItem('galleryCards');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) {}
-    }
-    return [
-      {
-        id: 'g1',
-        style: 'polaroid',
-        title: "Summer of '24",
-        date: "2024",
-        desc: "A vintage snapshot of us before life became busy, full of energy and big dreams.",
-        img: "/couple_road_trip.png"
-      },
-      {
-        id: 'g2',
-        style: 'cinematic',
-        title: "FIRST CHRISTMAS TOGETHER",
-        date: "2023",
-        desc: "Holding hands in front of the giant pine tree, shielding each other from the winter breeze.",
-        img: "/couple_campfire_night.png"
-      },
-      {
-        id: 'g3',
-        style: 'polaroid',
-        title: "Fixing the Apartment",
-        date: "2025",
-        desc: "Paint-stained hands, assembly blueprints, and that wide, proud smile after our first sofa was built.",
-        img: "/couple_first_date.png"
-      }
-    ];
-  });
+
 
   useEffect(() => {
     localStorage.setItem('spotlightTitle', spotlightTitle);
@@ -80,13 +49,7 @@ export default function App() {
     localStorage.setItem('spotlightImage', spotlightImage);
   }, [spotlightTitle, spotlightSubtitle, spotlightText, spotlightQuote, spotlightImage]);
 
-  useEffect(() => {
-    localStorage.setItem('galleryCards', JSON.stringify(galleryCards));
-  }, [galleryCards]);
 
-  const handleAddGalleryCard = (newCard) => {
-    setGalleryCards(prev => [newCard, ...prev]);
-  };
 
   const [bucketList, setBucketList] = useState([
     { id: 'b1', title: 'Road trip to the coast', done: false },
@@ -408,11 +371,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Memories Gallery Wall Section */}
-              <GalleryWall 
-                cards={galleryCards}
-                onAddCard={handleAddGalleryCard}
-              />
+
 
               {/* Custom Interactive Row: Our List (Date Night Checklist) */}
               <div style={{ marginTop: '1rem' }}>
