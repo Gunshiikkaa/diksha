@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 export default function CinematicEnding({ memories }) {
   const [confetti, setConfetti] = useState([]);
   const [celebrationActive, setCelebrationActive] = useState(false);
+  const [showThemeSong, setShowThemeSong] = useState(false);
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -627,7 +628,7 @@ export default function CinematicEnding({ memories }) {
             </button>
 
             <button
-              onClick={playChime}
+              onClick={() => setShowThemeSong(true)}
               style={{
                 backgroundColor: '#0c0c0c',
                 color: '#ccc',
@@ -753,6 +754,30 @@ export default function CinematicEnding({ memories }) {
           All custom memories and selections are stored safely inside your browser.
         </p>
       </div>
+
+      {showThemeSong && (
+        <div className="video-player-overlay" onClick={() => setShowThemeSong(false)}>
+          <button className="video-player-close-btn" onClick={() => setShowThemeSong(false)}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            CLOSE SONG
+          </button>
+          <div className="video-container" onClick={(e) => e.stopPropagation()} style={{ width: '80%', maxWidth: '800px', aspectRatio: '16/9', position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/gkCKTuR-ECI?autoplay=1&enablejsapi=1"
+              title="Theme Song"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0 }}
+            ></iframe>
+          </div>
+        </div>
+      )}
 
       {/* Embedded CSS Animations */}
       <style>{`
