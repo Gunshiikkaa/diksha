@@ -568,7 +568,7 @@ export default function CinematicEnding({ memories }) {
             textTransform: 'uppercase',
             marginBottom: '1rem'
           }}>
-            THANK YOU FOR BEING THE BEST PART OF MY <span style={{ color: 'var(--netflix-red)' }}>STORY</span>.
+            THANKYOU FOR BEING THE BEST PART OF MY <span style={{ color: 'var(--netflix-red)' }}>STORY</span>
           </h2>
 
           {/* Quote Section */}
@@ -581,11 +581,11 @@ export default function CinematicEnding({ memories }) {
             borderTop: '1px solid #222',
             paddingTop: '1.25rem',
             marginBottom: '1.5rem',
-            maxWidth: '460px',
+            maxWidth: '520px',
             marginLeft: 'auto',
             marginRight: 'auto'
           }}>
-            "In you, I've found the love of my life and my closest, truest partner. Every single episode with you is my absolute favorite."
+            "In a world full of stories, you’re still my favorite plot twist. You’re my favorite notification, my favorite conversation, and my favorite person. Every episode with you is a 10/10."
           </p>
 
           {/* Action Button Row */}
