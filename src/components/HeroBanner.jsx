@@ -49,7 +49,7 @@ export default function HeroBanner({ activeProfile }) {
       year: "2023",
       seasons: "Pilot Episode",
       tags: "Heartfelt • Inspiring • Original",
-      objectPosition: "center 8%"
+      objectPosition: "center 50%"
     },
     {
       id: "slide-first-date",
