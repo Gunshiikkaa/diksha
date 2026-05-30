@@ -10,6 +10,12 @@ export default function HeroBanner({ activeProfile }) {
   const anniversaryDate = new Date('2023-10-24');
   const [daysTogether, setDaysTogether] = useState(0);
 
+  // Slideshow States for Billboard
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
   useEffect(() => {
     const today = new Date();
     const diffTime = Math.abs(today - anniversaryDate);
@@ -19,44 +25,135 @@ export default function HeroBanner({ activeProfile }) {
 
   const slides = [
     {
+      id: "slide-main",
+      title: "The Greatest Story Ever Told: US",
+      desc: "An emotional, biographical documentary celebrating the shared adventures, late-night talks, and inside jokes of the ultimate dream team. Now streaming in each other's hearts forever.",
+      img: "/couple_sunset_date.png",
+      date: "Forever & Always",
+      subtitle: "👔 FEATURED DOCUMENTARY",
+      matchRate: "99% Match",
+      year: "2026",
+      seasons: "2 Seasons",
+      tags: "Romantic • Feel-Good • Slice of Life",
+      isVideo: true
+    },
+    {
+      id: "slide-spark",
       title: "The First Spark",
       desc: "Where it all began. A simple conversation that turned into late-night calls and nervous excitement.",
       img: "/couple_first_date.png",
-      date: "October 2023"
+      date: "October 2023",
+      subtitle: "✨ THE PREMIERE",
+      matchRate: "98% Match",
+      year: "2023",
+      seasons: "Pilot Episode",
+      tags: "Heartfelt • Inspiring • Original"
     },
     {
+      id: "slide-first-date",
       title: "First Date Magic",
       desc: "Nervous laughter, sharing a dessert we couldn't finish, and realizing this was something special.",
       img: "/couple_sunset_date.png",
-      date: "November 2023"
+      date: "November 2023",
+      subtitle: "☕ ROMANCE SPECIAL",
+      matchRate: "99% Match",
+      year: "2023",
+      seasons: "Episode 2",
+      tags: "Sweet • Cozy • Romantic"
     },
     {
+      id: "slide-road-trip",
       title: "Wanderlust Together",
       desc: "Getting lost in new cities, sharing a single pair of headphones, and making memory lanes across the map.",
       img: "/couple_road_trip.png",
-      date: "May 2024"
+      date: "May 2024",
+      subtitle: "🚗 TRAVEL DOC",
+      matchRate: "97% Match",
+      year: "2024",
+      seasons: "Special Edition",
+      tags: "Adventure • Travel • Uplifting"
     },
     {
-      title: "Cozy Coffee & Rainy Afternoons",
-      desc: "Finding comfort in the quietest moments, sharing books, and making the perfect blanket fort.",
+      id: "slide-campfire",
+      title: "Campfire Nights",
+      desc: "Finding comfort in the quietest moments, sharing books, and making the perfect blanket fort under a canopy of stars.",
       img: "/couple_campfire_night.png",
-      date: "December 2024"
+      date: "December 2024",
+      subtitle: "🔥 Cozy special",
+      matchRate: "96% Match",
+      year: "2024",
+      seasons: "Episode 5",
+      tags: "Warm • Cosy • Emotional"
     },
     {
+      id: "slide-beach",
       title: "Stronger Every Day",
       desc: "Celebrating wins, cheering through challenges, and realizing that home isn't a place—it's a person.",
       img: "/couple_beach_picnic.png",
-      date: "September 2025"
+      date: "September 2025",
+      subtitle: "🌊 slice of life",
+      matchRate: "99.2% Match",
+      year: "2025",
+      seasons: "Season 2 Finale",
+      tags: "Romantic • Inspiring • Original"
     },
     {
+      id: "slide-dinner",
       title: "The Next Chapter",
       desc: "Looking forward to thousands of more sunsets, shared pizzas, inside jokes, and adventures together.",
       img: "/couple_anniversary_dinner.png",
-      date: "Forever & Always"
+      date: "Forever & Always",
+      subtitle: "🕯️ ANNIVERSARY GALA",
+      matchRate: "99.8% Perfect",
+      year: "2026",
+      seasons: "Ongoing Series",
+      tags: "Fancy • Anniversary • Special"
     }
   ];
 
-  // Slideshow autoplay effect
+  // Silky Smooth Custom Real-time Slider Timer with Hover Pause
+  const slideDuration = 9000; // 9 seconds per slide for relaxed reading
+  useEffect(() => {
+    let startTime = Date.now() - (progress / 100) * slideDuration;
+    let animFrame;
+
+    const tick = () => {
+      if (isHovered) {
+        // Freeze timer progress bar while hovered
+        startTime = Date.now() - (progress / 100) * slideDuration;
+        animFrame = requestAnimationFrame(tick);
+        return;
+      }
+      
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min((elapsed / slideDuration) * 100, 100);
+      setProgress(pct);
+
+      if (elapsed >= slideDuration) {
+        setActiveSlideIndex((prev) => (prev + 1) % slides.length);
+        setProgress(0);
+        startTime = Date.now();
+      }
+      animFrame = requestAnimationFrame(tick);
+    };
+
+    animFrame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animFrame);
+  }, [activeSlideIndex, isHovered]);
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setActiveSlideIndex((prev) => (prev + 1) % slides.length);
+    setProgress(0);
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setActiveSlideIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    setProgress(0);
+  };
+
+  // Full screen slideshow player autoplay
   useEffect(() => {
     let timer;
     if (showSlideshow && isAutoplay) {
@@ -77,30 +174,86 @@ export default function HeroBanner({ activeProfile }) {
 
   return (
     <>
-      <div className="hero-banner">
-        {/* Background Looping Video */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="/couple_sunset_date.png"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 1,
-            opacity: 0.5
-          }}
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-and-walking-in-a-field-3428-large.mp4" type="video/mp4" />
-        </video>
+      <div 
+        className="hero-banner"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Background Layers (Cross-fading Videos & Images) */}
+        {slides.map((slide, idx) => {
+          if (slide.isVideo) {
+            return (
+              <video 
+                key={slide.id}
+                autoPlay 
+                loop 
+                muted={isMuted}
+                playsInline 
+                poster={slide.img}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  zIndex: 1,
+                  opacity: idx === activeSlideIndex ? 0.55 : 0,
+                  transition: 'opacity 1.2s ease-in-out',
+                  pointerEvents: 'none'
+                }}
+              >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-and-walking-in-a-field-3428-large.mp4" type="video/mp4" />
+              </video>
+            );
+          }
+          return (
+            <img 
+              key={slide.id}
+              src={slide.img} 
+              alt={slide.title}
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                zIndex: 1,
+                opacity: idx === activeSlideIndex ? 0.55 : 0,
+                transition: 'opacity 1.2s ease-in-out',
+                pointerEvents: 'none'
+              }}
+            />
+          );
+        })}
 
-        <div className="hero-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          
-          {/* Tribute Series Badge */}
+        {/* Arrow Controls (fade in on banner hover) */}
+        <button 
+          onClick={handlePrev}
+          className="hero-arrow-btn hero-arrow-left"
+          aria-label="Previous Slide"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <button 
+          onClick={handleNext}
+          className="hero-arrow-btn hero-arrow-right"
+          aria-label="Next Slide"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        {/* Content Container (Key-based to trigger entrance animation on slide shift) */}
+        <div 
+          key={activeSlideIndex}
+          className="hero-content hero-animate-text" 
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
+        >
+          {/* Featured Badge */}
           <div style={{ 
             display: 'flex', 
             alignItems: 'center', 
@@ -126,9 +279,10 @@ export default function HeroBanner({ activeProfile }) {
               fontFamily: 'var(--font-outfit)',
               letterSpacing: 'normal',
               marginRight: '2px'
-            }}>N</span> TRIBUTE SERIES
+            }}>N</span> {slides[activeSlideIndex].subtitle}
           </div>
 
+          {/* Slide Title */}
           <h1 className="hero-title" style={{ 
             fontFamily: "'Cinzel', 'Georgia', serif", 
             fontSize: '3.6rem', 
@@ -140,23 +294,29 @@ export default function HeroBanner({ activeProfile }) {
             letterSpacing: '0.02em',
             textShadow: '2px 2px 8px rgba(0,0,0,0.8)'
           }}>
-            The Greatest<br />
-            Story<br />
-            Ever Told: <span style={{ 
-              color: '#e50914', 
-              fontFamily: 'var(--font-outfit), sans-serif', 
-              fontWeight: '900',
-              textShadow: '0 0 15px rgba(229, 9, 20, 0.6)',
-              letterSpacing: '-0.02em'
-            }}>US</span>
+            {slides[activeSlideIndex].id === "slide-main" ? (
+              <>
+                The Greatest<br />
+                Story<br />
+                Ever Told: <span style={{ 
+                  color: '#e50914', 
+                  fontFamily: 'var(--font-outfit), sans-serif', 
+                  fontWeight: '900',
+                  textShadow: '0 0 15px rgba(229, 9, 20, 0.6)',
+                  letterSpacing: '-0.02em'
+                }}>US</span>
+              </>
+            ) : (
+              slides[activeSlideIndex].title
+            )}
           </h1>
 
           {/* Metadata Row */}
           <div className="hero-badge-row" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.25rem', fontSize: '0.9rem' }}>
-            <span className="hero-badge-match" style={{ color: '#4ade80', fontWeight: '700' }}>99% Match</span>
-            <span style={{ color: '#fff', fontWeight: '500' }}>2026</span>
+            <span className="hero-badge-match" style={{ color: '#4ade80', fontWeight: '700' }}>{slides[activeSlideIndex].matchRate}</span>
+            <span style={{ color: '#fff', fontWeight: '500' }}>{slides[activeSlideIndex].year}</span>
             <span style={{ border: '1px solid rgba(255,255,255,0.4)', padding: '1px 5px', fontSize: '0.7rem', borderRadius: '2.5px', color: '#fff', fontWeight: '700' }}>U/A 16+</span>
-            <span style={{ color: '#fff', fontWeight: '500' }}>2 Seasons</span>
+            <span style={{ color: '#fff', fontWeight: '500' }}>{slides[activeSlideIndex].seasons}</span>
             <span style={{ border: '1px solid rgba(255,255,255,0.4)', padding: '1px 5px', fontSize: '0.7rem', borderRadius: '2.5px', color: '#fff', fontWeight: '700', textTransform: 'uppercase' }}>ultra HD 4K</span>
             <span style={{ border: '1px solid rgba(255,255,255,0.4)', padding: '1px 5px', fontSize: '0.7rem', borderRadius: '2.5px', color: '#fff', fontWeight: '700', textTransform: 'uppercase' }}>HDR</span>
           </div>
@@ -170,12 +330,12 @@ export default function HeroBanner({ activeProfile }) {
             maxWidth: '550px',
             textShadow: '1px 1px 3px rgba(0,0,0,0.8)'
           }}>
-            An emotional, biographical documentary celebrating the shared adventures, late-night talks, and inside jokes of the ultimate dream team. Now streaming in each other's hearts forever.
+            {slides[activeSlideIndex].desc}
           </p>
           
           {/* Action Buttons */}
           <div className="hero-buttons">
-            <button className="hero-btn hero-btn-play" onClick={() => { setShowSlideshow(true); setCurrentSlide(0); }} style={{
+            <button className="hero-btn hero-btn-play" onClick={() => { setShowSlideshow(true); setCurrentSlide(activeSlideIndex); }} style={{
               backgroundColor: '#fff',
               color: '#000',
               fontWeight: '700',
@@ -186,7 +346,6 @@ export default function HeroBanner({ activeProfile }) {
               alignItems: 'center',
               gap: '8px'
             }}>
-              {/* Play SVG Icon */}
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z"/>
               </svg>
@@ -204,13 +363,56 @@ export default function HeroBanner({ activeProfile }) {
               alignItems: 'center',
               gap: '8px'
             }}>
-              {/* Info SVG Icon */}
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
               </svg>
               More Info
             </button>
           </div>
+        </div>
+
+        {/* Volume & Age Rating Info Ribbon */}
+        <div className="hero-right-meta-tag">
+          <button 
+            className="hero-volume-btn" 
+            onClick={() => setIsMuted(!isMuted)}
+            title={isMuted ? "Unmute background video" : "Mute background video"}
+          >
+            {isMuted ? (
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 2.76-2.24 5-5 5v2c3.87 0 7-3.13 7-7s-3.13-7-7-7v2c2.76 0 5 2.24 5 5zm-15-2v4h4l5 5V5L9 10H4z"/>
+              </svg>
+            ) : (
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            )}
+          </button>
+          <div className="hero-age-rating">
+            U/A 16+
+          </div>
+        </div>
+
+        {/* Indicator Progress bars */}
+        <div className="hero-indicators-container">
+          {slides.map((_, idx) => (
+            <div 
+              key={idx} 
+              className="hero-indicator-bar-wrapper"
+              onClick={() => {
+                setActiveSlideIndex(idx);
+                setProgress(0);
+              }}
+            >
+              <div 
+                className="hero-indicator-bar-fill"
+                style={{
+                  width: idx === activeSlideIndex ? `${progress}%` : idx < activeSlideIndex ? '100%' : '0%',
+                  transition: idx === activeSlideIndex ? 'none' : 'width 0.3s ease'
+                }}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -298,7 +500,7 @@ export default function HeroBanner({ activeProfile }) {
         </div>
       )}
 
-      {/* Slideshow Player Overlay */}
+      {/* Immersive Slideshow Player Overlay */}
       {showSlideshow && (
         <div className="slideshow-viewer">
           <div className="slideshow-header">
@@ -371,6 +573,159 @@ export default function HeroBanner({ activeProfile }) {
           </div>
         </div>
       )}
+
+      {/* Embedded Banner CSS Stylesheets */}
+      <style>{`
+        .hero-banner {
+          position: relative;
+          height: 85vh;
+          min-height: 700px;
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          padding: 0 4% 150px;
+          overflow: hidden;
+          background-color: #000;
+        }
+
+        /* Gradient overlays */
+        .hero-banner::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%),
+                      linear-gradient(to top, var(--bg-black) 0%, transparent 35%);
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        /* Side navigation arrows */
+        .hero-arrow-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) scale(0.9);
+          background: rgba(0, 0, 0, 0.45);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: #fff;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 15;
+          opacity: 0;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          backdrop-filter: blur(8px);
+        }
+
+        .hero-arrow-left { left: 1.5%; }
+        .hero-arrow-right { right: 1.5%; }
+
+        .hero-banner:hover .hero-arrow-btn {
+          opacity: 0.8;
+          transform: translateY(-50%) scale(1);
+        }
+
+        .hero-arrow-btn:hover {
+          background: rgba(229, 9, 20, 0.8) !important;
+          border-color: var(--netflix-red);
+          transform: translateY(-50%) scale(1.1) !important;
+          box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+        }
+
+        /* Indicators container */
+        .hero-indicators-container {
+          position: absolute;
+          right: 4%;
+          bottom: 150px;
+          display: flex;
+          gap: 6px;
+          z-index: 15;
+        }
+
+        .hero-indicator-bar-wrapper {
+          width: 32px;
+          height: 3px;
+          background: rgba(255, 255, 255, 0.25);
+          cursor: pointer;
+          border-radius: 2px;
+          overflow: hidden;
+          position: relative;
+          transition: background 0.2s;
+        }
+
+        .hero-indicator-bar-wrapper:hover {
+          background: rgba(255, 255, 255, 0.55);
+        }
+
+        .hero-indicator-bar-fill {
+          height: 100%;
+          background: #fff;
+          width: 0;
+          box-shadow: 0 0 4px #fff;
+        }
+
+        /* Ribbon panel */
+        .hero-right-meta-tag {
+          position: absolute;
+          right: 0;
+          bottom: 185px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          z-index: 15;
+        }
+
+        .hero-volume-btn {
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          background: rgba(0, 0, 0, 0.45);
+          border-radius: 50%;
+          width: 34px;
+          height: 34px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.2s;
+          backdrop-filter: blur(4px);
+        }
+
+        .hero-volume-btn:hover {
+          border-color: #fff;
+          background: rgba(255, 255, 255, 0.15);
+          transform: scale(1.08);
+        }
+
+        .hero-age-rating {
+          background: rgba(51, 51, 51, 0.6);
+          border-left: 3px solid #d4d4d4;
+          padding: 0.35rem 2.5rem 0.35rem 0.75rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: #fff;
+          backdrop-filter: blur(4px);
+          letter-spacing: 0.05em;
+        }
+
+        /* Animations */
+        @keyframes slideUpFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .hero-animate-text {
+          animation: slideUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+      `}</style>
     </>
   );
 }
