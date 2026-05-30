@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 export default function CinematicEnding({ memories }) {
   const [confetti, setConfetti] = useState([]);
   const [celebrationActive, setCelebrationActive] = useState(false);
-  const [showThemeSong, setShowThemeSong] = useState(false);
+  const [isThemeSongPlaying, setIsThemeSongPlaying] = useState(false);
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -628,16 +628,16 @@ export default function CinematicEnding({ memories }) {
             </button>
 
             <button
-              onClick={() => setShowThemeSong(true)}
+              onClick={() => setIsThemeSongPlaying(!isThemeSongPlaying)}
               style={{
-                backgroundColor: '#0c0c0c',
-                color: '#ccc',
+                backgroundColor: isThemeSongPlaying ? 'rgba(229, 9, 20, 0.15)' : '#0c0c0c',
+                color: isThemeSongPlaying ? 'var(--netflix-red)' : '#ccc',
                 fontWeight: '800',
                 fontSize: '0.85rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
                 padding: '0.75rem 1.75rem',
-                border: '1px solid #333',
+                border: isThemeSongPlaying ? '1px solid var(--netflix-red)' : '1px solid #333',
                 borderRadius: '50px',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
@@ -646,17 +646,17 @@ export default function CinematicEnding({ memories }) {
                 gap: '8px'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#555';
-                e.currentTarget.style.color = '#fff';
+                e.currentTarget.style.borderColor = isThemeSongPlaying ? 'var(--netflix-red)' : '#555';
+                e.currentTarget.style.color = isThemeSongPlaying ? 'var(--netflix-red)' : '#fff';
                 e.currentTarget.style.transform = 'scale(1.04)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#333';
-                e.currentTarget.style.color = '#ccc';
+                e.currentTarget.style.borderColor = isThemeSongPlaying ? 'var(--netflix-red)' : '#333';
+                e.currentTarget.style.color = isThemeSongPlaying ? 'var(--netflix-red)' : '#ccc';
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              Play Theme Song 🎵
+              {isThemeSongPlaying ? 'Stop Theme Song ⏹' : 'Play Theme Song 🎵'}
             </button>
           </div>
         </div>
@@ -755,28 +755,16 @@ export default function CinematicEnding({ memories }) {
         </p>
       </div>
 
-      {showThemeSong && (
-        <div className="video-player-overlay" onClick={() => setShowThemeSong(false)}>
-          <button className="video-player-close-btn" onClick={() => setShowThemeSong(false)}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            CLOSE SONG
-          </button>
-          <div className="video-container" onClick={(e) => e.stopPropagation()} style={{ width: '80%', maxWidth: '800px', aspectRatio: '16/9', position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}>
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/gkCKTuR-ECI?autoplay=1&enablejsapi=1"
-              title="Theme Song"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              style={{ position: 'absolute', top: 0, left: 0 }}
-            ></iframe>
-          </div>
-        </div>
+      {isThemeSongPlaying && (
+        <iframe
+          width="1"
+          height="1"
+          src="https://www.youtube.com/embed/gkCKTuR-ECI?autoplay=1&enablejsapi=1"
+          title="Theme Song Audio"
+          frameBorder="0"
+          allow="autoplay"
+          style={{ position: 'absolute', top: '-9999px', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+        ></iframe>
       )}
 
       {/* Embedded CSS Animations */}
