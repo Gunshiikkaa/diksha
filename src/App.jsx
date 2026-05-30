@@ -25,29 +25,29 @@ export default function App() {
   const [likedMemories, setLikedMemories] = useState({});
   const [isEditingSpotlight, setIsEditingSpotlight] = useState(false);
   const [spotlightTitle, setSpotlightTitle] = useState(() => 
-    localStorage.getItem('spotlightTitle') || "THE MOMENT\nTHAT CHANGED\nEVERYTHING"
+    localStorage.getItem('spotlightTitle_v2') || "THE MOMENT\nTHAT CHANGED\nEVERYTHING"
   );
   const [spotlightSubtitle, setSpotlightSubtitle] = useState(() => 
-    localStorage.getItem('spotlightSubtitle') || "OUR FOREVER PROMISE"
+    localStorage.getItem('spotlightSubtitle_v2') || "Our forever promise"
   );
   const [spotlightText, setSpotlightText] = useState(() => 
-    localStorage.getItem('spotlightText') || "It was a quiet Tuesday morning in October. I looked into your eyes for the first time, and in that split second, the weight of the entire universe shifted. I made a silent vow right then and there: to cherish you, support you, and love you more than life itself. Every single moment since that day has been my greatest honor."
+    localStorage.getItem('spotlightText_v2') || "It was a Sunday morning in Lonavala. I was getting ready to marry you when I received your letter, along with a giant bouquet of all my favorite flowers.I was genuinely nervous, but as I read your words and felt the love, excitement, and anticipation behind them, everything changed. I’ve never seen you express your emotions so openly, and somehow, those simple words brought tears to my eyes. It amazed me how deeply I could feel your love through a letter.From that moment on, all my nervousness turned into excitement. And honestly, I still feel that same excitement every day, knowing I get to spend the rest of my life with you. ❤️"
   );
   const [spotlightQuote, setSpotlightQuote] = useState(() => 
-    localStorage.getItem('spotlightQuote') || "You never know the value of a moment, until it becomes a memory that stays with you forever."
+    localStorage.getItem('spotlightQuote_v2') || "You never know the value of a moment, until it becomes a memory that stays with you forever."
   );
   const [spotlightImage, setSpotlightImage] = useState(() => 
-    localStorage.getItem('spotlightImage') || "/couple_sunset_date.png"
+    localStorage.getItem('spotlightImage_v2') || "/couple_sunset_date.png"
   );
 
 
 
   useEffect(() => {
-    localStorage.setItem('spotlightTitle', spotlightTitle);
-    localStorage.setItem('spotlightSubtitle', spotlightSubtitle);
-    localStorage.setItem('spotlightText', spotlightText);
-    localStorage.setItem('spotlightQuote', spotlightQuote);
-    localStorage.setItem('spotlightImage', spotlightImage);
+    localStorage.setItem('spotlightTitle_v2', spotlightTitle);
+    localStorage.setItem('spotlightSubtitle_v2', spotlightSubtitle);
+    localStorage.setItem('spotlightText_v2', spotlightText);
+    localStorage.setItem('spotlightQuote_v2', spotlightQuote);
+    localStorage.setItem('spotlightImage_v2', spotlightImage);
   }, [spotlightTitle, spotlightSubtitle, spotlightText, spotlightQuote, spotlightImage]);
 
 
