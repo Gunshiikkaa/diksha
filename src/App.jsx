@@ -53,10 +53,10 @@ export default function App() {
 
 
   const [bucketList, setBucketList] = useState([
-    { id: 'b1', title: 'Road trip to the coast', done: false },
-    { id: 'b2', title: 'Couples cooking masterclass', done: false },
-    { id: 'b3', title: 'Pitch blankets for midnight stargazing', done: true },
-    { id: 'b4', title: 'Write a joint future bucket list', done: false }
+    { id: 'b1', title: 'Cozy Kambal Night with Games & Gossip', done: false },
+    { id: 'b2', title: 'Watching Movie', done: false },
+    { id: 'b3', title: 'Searching new restaurants & trying new food every Tuesday', done: false },
+    { id: 'b4', title: 'Creating new memories', done: false }
   ]);
 
   // Ambient sound generator using Web Audio API
@@ -382,9 +382,9 @@ export default function App() {
 
 
 
-              {/* Custom Interactive Row: Our List (Date Night Checklist) */}
+              {/* Custom Interactive Row: Our List (Ideal Date Night List) */}
               <div style={{ marginTop: '1rem' }}>
-                <h2 className="memory-row-title">My List (Date Night Bucket List)</h2>
+                <h2 className="memory-row-title">My List (Ideal Date Night List)</h2>
                 <div style={{
                   backgroundColor: '#161616',
                   border: '1px solid #222',
