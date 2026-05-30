@@ -77,12 +77,27 @@ export default function HeroBanner({ activeProfile }) {
 
   return (
     <>
-      <div 
-        className="hero-banner" 
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1600&q=80')`
-        }}
-      >
+      <div className="hero-banner">
+        {/* Background Looping Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          poster="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1600&q=80"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 1,
+            opacity: 0.5
+          }}
+        >
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-and-walking-in-a-field-3428-large.mp4" type="video/mp4" />
+        </video>
+
         <div className="hero-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
           
           {/* Tribute Series Badge */}

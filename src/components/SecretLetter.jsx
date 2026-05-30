@@ -6,7 +6,7 @@ export default function SecretLetter() {
   const [errorMsg, setErrorMsg] = useState('');
   const [hearts, setHearts] = useState([]);
 
-  const correctPIN = '1024'; // October 24 anniversary
+  const correctPIN = '0000'; // Default passcode
 
   const handleKeyPress = (num) => {
     if (passcode.length < 4) {
@@ -99,7 +99,7 @@ export default function SecretLetter() {
             Secret Lockbox
           </h2>
           <p style={{ color: 'var(--text-grey)', fontSize: '0.85rem', marginBottom: '1rem' }}>
-            Please enter our anniversary passcode (MMDD) to unlock a private message.
+            Please enter our secret passcode (0000) to unlock a private message.
           </p>
 
           {/* Keypad display */}
@@ -152,7 +152,7 @@ export default function SecretLetter() {
             </button>
           </div>
           <div style={{ fontSize: '0.75rem', color: '#555', marginTop: '0.5rem' }}>
-            Hint: Late October celebration date.
+            Hint: Four zeros.
           </div>
         </div>
       ) : (
