@@ -20,6 +20,7 @@ export default function App() {
   const [activeProfile, setActiveProfile] = useState(null);
   const [activeTab, setActiveTab] = useState('home');
   const [selectedMemory, setSelectedMemory] = useState(null);
+  const [playingVideoUrl, setPlayingVideoUrl] = useState(null);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [likedMemories, setLikedMemories] = useState({});
   const [isEditingSpotlight, setIsEditingSpotlight] = useState(false);
@@ -209,7 +210,8 @@ export default function App() {
       year: '2026',
       location: 'Home',
       date: '30 May 2026',
-      tags: 'Heartfelt • Milestone • Original'
+      tags: 'Heartfelt • Milestone • Original',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-standing-close-under-a-tree-42525-large.mp4'
     },
     {
       id: 'c2',
@@ -220,7 +222,8 @@ export default function App() {
       year: '2026',
       location: 'Goa',
       date: '3 May 2026',
-      tags: 'Adventure • Travel • Romantic'
+      tags: 'Adventure • Travel • Romantic',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-holding-hands-and-running-on-the-beach-29009-large.mp4'
     },
     {
       id: 'c3',
@@ -231,7 +234,8 @@ export default function App() {
       year: '2026',
       location: 'Home',
       date: '5 April 2026',
-      tags: 'Sweet • Celebration • Cozy'
+      tags: 'Sweet • Celebration • Cozy',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-lights-of-a-happy-birthday-candle-burning-43285-large.mp4'
     },
     {
       id: 'c4',
@@ -242,7 +246,8 @@ export default function App() {
       year: '2026',
       location: 'Home',
       date: '14 February 2026',
-      tags: 'Cozy • Romantic • Sweet'
+      tags: 'Cozy • Romantic • Sweet',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-heart-shaped-balloons-floating-in-the-air-43292-large.mp4'
     }
   ];
 
@@ -256,7 +261,8 @@ export default function App() {
       year: '2024',
       location: 'Mountain Vista Café',
       date: 'May 12, 2024',
-      tags: 'Heartfelt • Adventure • Original'
+      tags: 'Heartfelt • Adventure • Original',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-sitting-in-a-cafe-drinking-coffee-40156-large.mp4'
     },
     {
       id: 't2',
@@ -267,7 +273,8 @@ export default function App() {
       year: '2024',
       location: 'City Amphitheater',
       date: 'Aug 18, 2024',
-      tags: 'Heartfelt • Music • Romantic'
+      tags: 'Heartfelt • Music • Romantic',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-starry-night-sky-with-clouds-flowing-4050-large.mp4'
     },
     {
       id: 't3',
@@ -278,7 +285,8 @@ export default function App() {
       year: '2024',
       location: 'Sandy Shores Beach',
       date: 'July 5, 2024',
-      tags: 'Sweet • Cozy • Original'
+      tags: 'Sweet • Cozy • Original',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-on-a-sandy-beach-at-sunset-29007-large.mp4'
     },
     {
       id: 't4',
@@ -289,7 +297,8 @@ export default function App() {
       year: '2025',
       location: 'The Glasshouse Bistro',
       date: 'Oct 24, 2025',
-      tags: 'Fancy • Anniversary • Special'
+      tags: 'Fancy • Anniversary • Special',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-at-a-dinner-party-43309-large.mp4'
     }
   ];
 
@@ -483,6 +492,19 @@ export default function App() {
                   <span>•</span>
                   <span>{selectedMemory.location}</span>
                 </div>
+                {selectedMemory.videoUrl && (
+                  <button 
+                    className="modal-play-btn" 
+                    onClick={() => {
+                      setPlayingVideoUrl(selectedMemory.videoUrl);
+                    }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '4px' }}>
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    Play Video
+                  </button>
+                )}
               </div>
             </div>
 
@@ -656,6 +678,28 @@ export default function App() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Immersive Video Player Overlay */}
+      {playingVideoUrl && (
+        <div className="video-player-overlay" onClick={() => setPlayingVideoUrl(null)}>
+          <button className="video-player-close-btn" onClick={() => setPlayingVideoUrl(null)}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            BACK TO BROWSE
+          </button>
+          <div className="video-container" onClick={(e) => e.stopPropagation()} style={{ width: '80%', maxAspect: '16/9', position: 'relative' }}>
+            <video 
+              src={playingVideoUrl} 
+              controls 
+              autoPlay 
+              style={{ width: '100%', borderRadius: '8px', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}
+              onEnded={() => setPlayingVideoUrl(null)}
+            />
           </div>
         </div>
       )}

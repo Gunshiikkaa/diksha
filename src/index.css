@@ -599,6 +599,69 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+/* Modal Play Button & Video Player */
+.modal-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0.65rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.modal-play-btn:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.05);
+}
+
+.video-player-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+.video-player-close-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 2010;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  transition: opacity 0.2s;
+}
+
+.video-player-close-btn:hover {
+  opacity: 0.8;
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Date Night Planner Widget */
 .date-planner-container {
   background-color: #111;
