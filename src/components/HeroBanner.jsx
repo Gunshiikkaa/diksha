@@ -290,7 +290,7 @@ export default function HeroBanner({ activeProfile }) {
           {/* Slide Title */}
           <h1 className="hero-title" style={{ 
             fontFamily: "'Cinzel', 'Georgia', serif", 
-            fontSize: '3.6rem', 
+            fontSize: 'clamp(2.2rem, 8vw, 3.6rem)', 
             lineHeight: '1.05', 
             fontWeight: '400',
             textTransform: 'uppercase',

@@ -5,34 +5,14 @@ export default function IntroScreen({ onProfileSelect }) {
 
   const profiles = [
     {
-      name: 'Vatsal',
-      letter: 'V',
-      gradient: 'linear-gradient(135deg, #1e40af, #3b82f6)', // Blue/indigo gradient
-      badgeText: '👔 HE',
-      badgeColor: '#1d4ed8',
-      role: 'THE BOYFRIEND 👔',
-      avatarColor: '#1e40af',
-      emoji: '👔'
-    },
-    {
-      name: 'Muskan',
-      letter: 'M',
-      gradient: 'linear-gradient(135deg, #be185d, #ec4899)', // Red/pink gradient
-      badgeText: '👑 SHE',
-      badgeColor: '#db2777',
-      role: 'THE GIRLFRIEND 👑',
-      avatarColor: '#be185d',
-      emoji: '👑'
-    },
-    {
-      name: 'Both ❤️',
-      letter: '❤️',
-      gradient: 'linear-gradient(135deg, #b45309, #f59e0b)', // Amber/orange gradient
-      badgeText: '💖 US',
-      badgeColor: '#d97706',
-      role: 'THE COUPLE 💖',
-      avatarColor: '#b45309',
-      emoji: '💖'
+      name: "G's Birthday",
+      letter: '🎂',
+      gradient: 'linear-gradient(135deg, #e50914, #ff3344)', // Signature red gradient
+      badgeText: '🎂 G',
+      badgeColor: '#e50914',
+      role: 'SPECIAL CELEBRATION 🎂',
+      avatarColor: '#e50914',
+      emoji: '🎂'
     }
   ];
 
@@ -129,7 +109,7 @@ export default function IntroScreen({ onProfileSelect }) {
         <h1 style={{ 
           fontFamily: "'Cinzel', 'Georgia', serif", 
           fontWeight: 600, 
-          fontSize: '3.5rem', 
+          fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', 
           marginBottom: '0.15rem',
           letterSpacing: '0.02em',
           color: '#fff'
@@ -140,7 +120,7 @@ export default function IntroScreen({ onProfileSelect }) {
         <p style={{
           color: '#808080',
           letterSpacing: '0.15em',
-          fontSize: '0.8rem',
+          fontSize: 'clamp(0.7rem, 2.5vw, 0.8rem)',
           fontFamily: 'var(--font-outfit)',
           textTransform: 'uppercase',
           marginBottom: '2rem'
