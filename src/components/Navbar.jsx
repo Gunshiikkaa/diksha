@@ -46,17 +46,6 @@ export default function Navbar({
           COUPLE<span style={{ color: '#fff' }}>FLIX</span>
         </button>
 
-        {/* Hamburger Menu Button */}
-        <button 
-          className={`hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
-
         <ul className="nav-links">
           {tabs.map((tab) => (
             <li key={tab.id}>
@@ -224,6 +213,18 @@ export default function Navbar({
             </div>
           )}
         </div>
+
+        {/* Hamburger Menu Button */}
+        <button 
+          className={`hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle Menu"
+          style={{ marginLeft: '10px' }}
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
       </div>
     </nav>
   );

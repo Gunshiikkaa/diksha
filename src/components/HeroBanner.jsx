@@ -730,6 +730,22 @@ export default function HeroBanner({ activeProfile }) {
         .hero-animate-text {
           animation: slideUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
+
+        @media (max-width: 768px) {
+          .hero-banner {
+            height: auto !important;
+            min-height: 560px !important;
+            padding: 95px 4% 80px !important;
+            display: flex !important;
+            align-items: flex-end !important;
+          }
+          .hero-indicators-container {
+            bottom: 30px !important;
+          }
+          .hero-right-meta-tag {
+            bottom: 65px !important;
+          }
+        }
       `}</style>
     </>
   );
