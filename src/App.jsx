@@ -50,7 +50,48 @@ export default function App() {
     localStorage.setItem('spotlightImage_v2', spotlightImage);
   }, [spotlightTitle, spotlightSubtitle, spotlightText, spotlightQuote, spotlightImage]);
 
+  // Handle URL hash routing to support browser back button navigation
+  useEffect(() => {
+    if (!activeProfile) {
+      // Clear hash if not logged in (profile selection screen)
+      if (window.location.hash) {
+        window.history.replaceState(null, null, ' ');
+      }
+      return;
+    }
 
+    const validTabs = ['home', 'timeline', 'planner', 'vault', 'letter'];
+
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (validTabs.includes(hash)) {
+        setActiveTab(hash);
+      } else {
+        setActiveTab('home');
+        window.location.hash = 'home';
+      }
+    };
+
+    // If there is an existing hash, apply it on login
+    const initialHash = window.location.hash.replace('#', '');
+    if (validTabs.includes(initialHash)) {
+      setActiveTab(initialHash);
+    } else {
+      window.location.hash = activeTab;
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [activeProfile]);
+
+  // Sync hash when activeTab changes programatically
+  useEffect(() => {
+    if (activeProfile) {
+      if (window.location.hash.replace('#', '') !== activeTab) {
+        window.location.hash = activeTab;
+      }
+    }
+  }, [activeTab, activeProfile]);
 
   const [bucketList, setBucketList] = useState([
     { id: 'b1', title: 'Cozy Kambal Night with Games & Gossip', done: false },
@@ -320,6 +361,47 @@ export default function App() {
 
       {/* Main Tab Routing */}
       <main style={{ flex: 1, paddingTop: activeTab === 'home' ? 0 : '70px' }}>
+        {activeTab !== 'home' && (
+          <div className="subpage-back-wrapper" style={{ padding: '1.5rem 4% 0.5rem' }}>
+            <button 
+              onClick={() => {
+                setActiveTab('home');
+              }}
+              className="subpage-back-btn"
+              style={{
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: '20px',
+                color: '#e5e5e5',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                transition: 'all 0.2s ease',
+                padding: '0.5rem 1.25rem'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#fff';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.transform = 'translateX(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#e5e5e5';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.transform = 'translateX(0)';
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Back to Home
+            </button>
+          </div>
+        )}
+
         {activeTab === 'home' && (
           <>
             <HeroBanner activeProfile={activeProfile} />

@@ -10,6 +10,7 @@ export default function Navbar({
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,17 +36,35 @@ export default function Navbar({
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-left">
         <button 
-          onClick={() => setActiveTab('home')} 
+          onClick={() => {
+            setActiveTab('home');
+            setIsMobileMenuOpen(false);
+          }} 
           className="nav-logo"
           style={{ background: 'none', border: 'none', cursor: 'pointer' }}
         >
           COUPLE<span style={{ color: '#fff' }}>FLIX</span>
         </button>
+
+        {/* Hamburger Menu Button */}
+        <button 
+          className={`hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+
         <ul className="nav-links">
           {tabs.map((tab) => (
             <li key={tab.id}>
               <button 
-                onClick={() => setActiveTab(tab.id)} 
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  setIsMobileMenuOpen(false);
+                }} 
                 className={`nav-link-btn ${activeTab === tab.id ? 'active' : ''}`}
               >
                 {tab.label}
@@ -53,6 +72,22 @@ export default function Navbar({
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Mobile Menu Dropdown Overlay */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+        {tabs.map((tab) => (
+          <button 
+            key={tab.id}
+            onClick={() => {
+              setActiveTab(tab.id);
+              setIsMobileMenuOpen(false);
+            }} 
+            className={`mobile-nav-link-btn ${activeTab === tab.id ? 'active' : ''}`}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
       <div className="nav-right">
