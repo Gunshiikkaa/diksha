@@ -37,7 +37,7 @@ export default function App() {
     localStorage.getItem('spotlightQuote_v2') || "You never know the value of a moment, until it becomes a memory that stays with you forever."
   );
   const [spotlightImage, setSpotlightImage] = useState(() => 
-    localStorage.getItem('spotlightImage_v2') || "/couple_sunset_date.png"
+    localStorage.getItem('spotlightImage_v2') || "/wedding_moment.png"
   );
 
 
