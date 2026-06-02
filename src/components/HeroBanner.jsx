@@ -36,7 +36,7 @@ export default function HeroBanner({ activeProfile }) {
       seasons: "2 Seasons",
       tags: "Romantic • Feel-Good • Slice of Life",
       isVideo: false,
-      objectPosition: "center 25%"
+      objectPosition: "center 85%"
     },
     {
       id: "slide-spark",
