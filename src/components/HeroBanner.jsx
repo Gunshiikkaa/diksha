@@ -25,75 +25,36 @@ export default function HeroBanner({ activeProfile }) {
 
   const slides = [
     {
-      id: "slide-main",
-      title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
-      img: "/slideshow/IMG_2073.JPG.jpeg",
-      date: "Now streaming in our hearts forever",
-      subtitle: "Now streaming in our hearts forever",
-      matchRate: "99% Match",
-      year: "2026",
-      seasons: "2 Seasons",
-      tags: "Romantic • Feel-Good • Slice of Life",
-      isVideo: false,
-      objectPosition: "center 25%"
-    },
-    {
-      id: "slide-spark",
-      title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
-      img: "/slideshow/IMG_2069.JPG.jpeg",
-      date: "Now streaming in our hearts forever",
-      subtitle: "Now streaming in our hearts forever",
-      matchRate: "98% Match",
-      year: "2023",
-      seasons: "Pilot Episode",
-      tags: "Heartfelt • Inspiring • Original",
-      objectPosition: "center 85%"
-    },
-    {
       id: "slide-first-date",
       title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
       img: "/slideshow/IMG_2083.JPG.jpeg",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "99% Match",
       year: "2023",
-      seasons: "Episode 2",
+      seasons: "Pilot Episode",
       tags: "Sweet • Cozy • Romantic",
-      objectPosition: "center 25%"
+      isVideo: false,
+      objectPosition: "center 30%"
     },
     {
-      id: "slide-road-trip",
+      id: "slide-main",
       title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
-      img: "/slideshow/IMG_5752.jpg",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
+      img: "/slideshow/IMG_2073.JPG.jpeg",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
-      matchRate: "97% Match",
-      year: "2024",
-      seasons: "Special Edition",
-      tags: "Adventure • Travel • Uplifting",
-      objectPosition: "center 25%"
-    },
-    {
-      id: "slide-campfire",
-      title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
-      img: "/slideshow/IMG_7746.JPG.jpeg",
-      date: "Now streaming in our hearts forever",
-      subtitle: "Now streaming in our hearts forever",
-      matchRate: "96% Match",
-      year: "2024",
-      seasons: "Episode 5",
-      tags: "Warm • Cosy • Emotional",
+      matchRate: "98% Match",
+      year: "2026",
+      seasons: "2 Seasons",
+      tags: "Romantic • Feel-Good • Slice of Life",
       objectPosition: "center 25%"
     },
     {
       id: "slide-beach",
       title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
       img: "/slideshow/IMG_8556.JPG.jpeg",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
@@ -106,7 +67,7 @@ export default function HeroBanner({ activeProfile }) {
     {
       id: "slide-dinner",
       title: "the greatest love story ever made:us",
-      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other’s hearts, forever and always.",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
       img: "/slideshow/IMG_8577.JPG.jpeg",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
@@ -114,6 +75,45 @@ export default function HeroBanner({ activeProfile }) {
       year: "2026",
       seasons: "Ongoing Series",
       tags: "Fancy • Anniversary • Special",
+      objectPosition: "center 25%"
+    },
+    {
+      id: "slide-spark",
+      title: "the greatest love story ever made:us",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
+      img: "/slideshow/IMG_2069.JPG.jpeg",
+      date: "Now streaming in our hearts forever",
+      subtitle: "Now streaming in our hearts forever",
+      matchRate: "97% Match",
+      year: "2023",
+      seasons: "Episode 2",
+      tags: "Heartfelt • Inspiring • Original",
+      objectPosition: "center 85%"
+    },
+    {
+      id: "slide-road-trip",
+      title: "the greatest love story ever made:us",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
+      img: "/slideshow/IMG_5752.jpg",
+      date: "Now streaming in our hearts forever",
+      subtitle: "Now streaming in our hearts forever",
+      matchRate: "96% Match",
+      year: "2024",
+      seasons: "Special Edition",
+      tags: "Adventure • Travel • Uplifting",
+      objectPosition: "center 25%"
+    },
+    {
+      id: "slide-campfire",
+      title: "the greatest love story ever made:us",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
+      img: "/slideshow/IMG_7746.JPG.jpeg",
+      date: "Now streaming in our hearts forever",
+      subtitle: "Now streaming in our hearts forever",
+      matchRate: "96% Match",
+      year: "2024",
+      seasons: "Episode 5",
+      tags: "Warm • Cosy • Emotional",
       objectPosition: "center 25%"
     }
   ];
@@ -437,9 +437,10 @@ export default function HeroBanner({ activeProfile }) {
             
             <div className="modal-image-wrapper">
               <img 
-                src="/couple_anniversary_dinner.png" 
+                src="/slideshow/IMG_2083.JPG.jpeg" 
                 className="modal-image" 
                 alt="Love Story info cover" 
+                style={{ objectPosition: 'center 30%' }}
               />
               <div className="modal-gradient"></div>
               <div style={{
