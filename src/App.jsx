@@ -25,29 +25,29 @@ export default function App() {
   const [likedMemories, setLikedMemories] = useState({});
   const [isEditingSpotlight, setIsEditingSpotlight] = useState(false);
   const [spotlightTitle, setSpotlightTitle] = useState(() => 
-    localStorage.getItem('spotlightTitle_v2') || "THE MOMENT\nTHAT CHANGED\nEVERYTHING"
+    localStorage.getItem('spotlightTitle_v3') || "THE MOMENT\nTHAT CHANGED\nEVERYTHING"
   );
   const [spotlightSubtitle, setSpotlightSubtitle] = useState(() => 
-    localStorage.getItem('spotlightSubtitle_v2') || "Our forever promise"
+    localStorage.getItem('spotlightSubtitle_v3') || "Our forever promise"
   );
   const [spotlightText, setSpotlightText] = useState(() => 
-    localStorage.getItem('spotlightText_v2') || "It was a Sunday morning in Lonavala. I was getting ready to marry you when I received your letter, along with a giant bouquet of all my favorite flowers.I was genuinely nervous, but as I read your words and felt the love, excitement, and anticipation behind them, everything changed. I’ve never seen you express your emotions so openly, and somehow, those simple words brought tears to my eyes. It amazed me how deeply I could feel your love through a letter.From that moment on, all my nervousness turned into excitement. And honestly, I still feel that same excitement every day, knowing I get to spend the rest of my life with you. ❤️"
+    localStorage.getItem('spotlightText_v3') || "It was a Sunday morning in Lonavala. I was getting ready to marry you when I received your letter, along with a giant bouquet of all my favorite flowers.I was genuinely nervous, but as I read your words and felt the love, excitement, and anticipation behind them, everything changed. I've never seen you express your emotions so openly, and somehow, those simple words brought tears to my eyes. It amazed me how deeply I could feel your love through a letter.From that moment on, all my nervousness turned into excitement. And honestly, I still feel that same excitement every day, knowing I get to spend the rest of my life with you. ❤️"
   );
   const [spotlightQuote, setSpotlightQuote] = useState(() => 
-    localStorage.getItem('spotlightQuote_v2') || "You never know the value of a moment, until it becomes a memory that stays with you forever."
+    localStorage.getItem('spotlightQuote_v3') || "You never know the value of a moment, until it becomes a memory that stays with you forever."
   );
   const [spotlightImage, setSpotlightImage] = useState(() => 
-    localStorage.getItem('spotlightImage_v2') || "/wedding_moment.png"
+    localStorage.getItem('spotlightImage_v3') || "/wedding_moment.png"
   );
 
 
 
   useEffect(() => {
-    localStorage.setItem('spotlightTitle_v2', spotlightTitle);
-    localStorage.setItem('spotlightSubtitle_v2', spotlightSubtitle);
-    localStorage.setItem('spotlightText_v2', spotlightText);
-    localStorage.setItem('spotlightQuote_v2', spotlightQuote);
-    localStorage.setItem('spotlightImage_v2', spotlightImage);
+    localStorage.setItem('spotlightTitle_v3', spotlightTitle);
+    localStorage.setItem('spotlightSubtitle_v3', spotlightSubtitle);
+    localStorage.setItem('spotlightText_v3', spotlightText);
+    localStorage.setItem('spotlightQuote_v3', spotlightQuote);
+    localStorage.setItem('spotlightImage_v3', spotlightImage);
   }, [spotlightTitle, spotlightSubtitle, spotlightText, spotlightQuote, spotlightImage]);
 
   // Handle URL hash routing to support browser back button navigation
