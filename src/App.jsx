@@ -252,7 +252,8 @@ export default function App() {
       location: 'Home',
       date: '30 May 2026',
       tags: 'Heartfelt • Milestone • Original',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-standing-close-under-a-tree-42525-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-standing-close-under-a-tree-42525-large.mp4',
+      objectPosition: 'top'
     },
     {
       id: 'c2',
@@ -264,7 +265,8 @@ export default function App() {
       location: 'Goa',
       date: '3 May 2026',
       tags: 'Adventure • Travel • Romantic',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-holding-hands-and-running-on-the-beach-29009-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-holding-hands-and-running-on-the-beach-29009-large.mp4',
+      objectPosition: 'top'
     },
     {
       id: 'c3',
@@ -276,7 +278,8 @@ export default function App() {
       location: 'Home',
       date: '5 April 2026',
       tags: 'Sweet • Celebration • Cozy',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-lights-of-a-happy-birthday-candle-burning-43285-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-lights-of-a-happy-birthday-candle-burning-43285-large.mp4',
+      objectPosition: 'top'
     },
     {
       id: 'c4',
@@ -288,7 +291,8 @@ export default function App() {
       location: 'Home',
       date: '14 February 2026',
       tags: 'Cozy • Romantic • Sweet',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-heart-shaped-balloons-floating-in-the-air-43292-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-heart-shaped-balloons-floating-in-the-air-43292-large.mp4',
+      objectPosition: 'top'
     }
   ];
 
@@ -303,7 +307,8 @@ export default function App() {
       location: 'Special Venue',
       date: 'Oct 24, 2024',
       tags: 'Heartfelt • Milestone • Original',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-sitting-in-a-cafe-drinking-coffee-40156-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-sitting-in-a-cafe-drinking-coffee-40156-large.mp4',
+      objectPosition: 'top'
     },
     {
       id: 't2',
@@ -315,7 +320,8 @@ export default function App() {
       location: 'Beach',
       date: '2023',
       tags: 'Adventure • Travel • Romantic',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-starry-night-sky-with-clouds-flowing-4050-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-starry-night-sky-with-clouds-flowing-4050-large.mp4',
+      objectPosition: 'top'
     },
     {
       id: 't3',
@@ -327,7 +333,8 @@ export default function App() {
       location: 'Special Event',
       date: '2026',
       tags: 'Romantic • Special • Dreamy',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-on-a-sandy-beach-at-sunset-29007-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-on-a-sandy-beach-at-sunset-29007-large.mp4',
+      objectPosition: 'top'
     },
     {
       id: 't4',
@@ -339,10 +346,10 @@ export default function App() {
       location: 'Special Venue',
       date: 'Oct 24, 2025',
       tags: 'Fancy • Anniversary • Special',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-at-a-dinner-party-43309-large.mp4'
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-at-a-dinner-party-43309-large.mp4',
+      objectPosition: 'top'
     }
   ];
-
 
   if (!activeProfile) {
     return <IntroScreen onProfileSelect={setActiveProfile} />;
