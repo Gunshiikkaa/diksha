@@ -163,19 +163,66 @@ export default function SecretLetter() {
           
           <div className="love-letter-paper">
             <div className="love-letter-content">
-              <h3 className="love-letter-heading">Dearest Muskan,</h3>
+              <h3 className="love-letter-heading">My Dearest G,</h3>
               <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
-                Every single day spent with you has felt like an incredible episode of my absolute favorite series. We have shared so many seasons already—from the nervous smiles and initial coffee dates of our pilot episode, to the road trips, late-night chats, culinary achievements (and disasters!), and moving into our cozy shared space.
+                Sometimes I sit quietly and wonder how a person who was once a stranger became my safest place in the entire world.
               </p>
               <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
-                You are my comfort when I am tired, my partner in laughter, my critic in film reviews, and my biggest source of happiness. Thank you for being exactly who you are, for loving me, and for writing this beautiful story with me day after day.
+                A year ago, if someone had told me that the boy I was nervously stalking on Instagram, the one who made me run to the washroom in panic when I first saw him walking into the restaurant, would become the love of my life, I probably would have laughed. Yet here we are.
               </p>
-              <p style={{ textIndent: '2rem' }}>
-                No matter how many seasons we film, I know the best is yet to come. I love you more than words, characters, or lines of code can describe.
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                What started with nervous conversations and stolen glances slowly turned into late-night calls that stretched till sunrise, endless laughter, countless memories, and a love so deep that I now struggle to remember what life felt like before you.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                I still remember our journey towards the wedding—the endless preparations, the discussions, the excitement, and the anticipation. Somewhere between all those months, my heart quietly chose you over and over again.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                And then came our wedding day. The bouquet of my favorite flowers. The letter that made me cry. The way your words wrapped around my heart and made every fear disappear. As I walked towards you, I wasn't just walking down an aisle—I was walking towards the life I had always dreamed of without even knowing it.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                Everyone says marriage changes everything. For me, marriage simply confirmed what I already knew: <strong>You were home.</strong>
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                I left one home behind, yet somehow I never felt lost. Not because I was brave, but because every step of the way, you made sure I never walked alone. You listened to every worry, every fear, every silly thought that crossed my mind. And somehow, every time, you made everything feel lighter.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                But if I had to choose one moment that truly changed me, it would be that night in March. I was unwell. Yet that night, I saw what love truly looks like. I saw it in you. The man who can't sleep without the AC stayed awake the entire night just to make sure I was okay. You checked on me every few minutes. You held me close. You comforted me. You sat beside me while the world slept.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                You didn't do it because anyone asked you to. You did it because my pain mattered to you. And that night, I fell in love with you in a way I never had before.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                Not because of grand gestures. Not because of gifts. Not because of romantic words. But because I realized that if life ever became difficult, if I ever found myself scared, lost, broken, confused, or exhausted—you would be right there beside me. And that is the rarest kind of love in this world.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                You have taught me that love is not found in extraordinary moments alone. It is found in the everyday things. In the way you check if I've eaten. In the way you remember tiny details. In the way you protect my peace. In the way you make me laugh when I want to cry. In the way you love me even on days when I don't feel lovable.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                You have given me something every person secretly hopes to find:
+              </p>
+              <p style={{ textAlign: 'center', marginBottom: '1.5rem', fontStyle: 'italic', color: 'var(--netflix-red-hover)' }}>
+                A love that feels safe.<br />
+                A love that feels effortless.<br />
+                A love that feels like coming home.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                When I look at you today, I don't just see my husband. I see my best friend. My comfort person. My biggest blessing. My favorite chapter. My greatest adventure. And the love story I will choose in every lifetime.
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                If I could go back to that nervous girl hiding before our first meeting, I would hold her hand and tell her: <em>"Don't be scared. The man you're about to meet is going to love you more beautifully than you can imagine."</em>
+              </p>
+              <p style={{ textIndent: '2rem', marginBottom: '1.5rem' }}>
+                Thank you for every laugh, every memory, every sacrifice, every hug, every late-night conversation, every forehead kiss, every act of care, and every moment that has made our story what it is today.
+              </p>
+              <p style={{ textAlign: 'center', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                I loved you then.<br />
+                I love you now.<br />
+                And after every sunrise, every season, every year, and every lifetime—<br />
+                <strong>I will still choose you.</strong>
               </p>
               <div className="love-letter-footer">
-                <p>Always and forever yours,</p>
-                <p style={{ color: 'var(--netflix-red-hover)', fontSize: '2.4rem', marginTop: '0.5rem' }}>Vatsal ❤️</p>
+                <p>Forever yours,</p>
+                <p style={{ color: 'var(--netflix-red-hover)', fontSize: '2.4rem', marginTop: '0.5rem' }}>Isha ❤️</p>
               </div>
             </div>
           </div>
