@@ -16,7 +16,8 @@ export default function MemoryVault({ onCardClick }) {
       img: '/vault_chai_garden.jpg',
       desc: 'The time I wanted to impress everyone & bought my handmade Chai in garden & ended up becoming the joke of the day to a very beautiful day 🤪',
       matchRate: '100% Comedy',
-      year: '2024'
+      year: '2024',
+      objectPosition: 'top'
     },
     {
       id: 'v2',
@@ -27,7 +28,8 @@ export default function MemoryVault({ onCardClick }) {
       img: '/vault_activa_fall.jpg',
       desc: 'The time I fell from your Activa TWICE.! You were so worried & me very normal coz I know I\'m clumsy 😂 That day you learned that you have to hold my hand like a baby everywhere we go 😂🙈 which you still do everyday 😘',
       matchRate: '100% Comedy',
-      year: '2024'
+      year: '2024',
+      objectPosition: 'top'
     },
     {
       id: 'v3',
@@ -60,7 +62,8 @@ export default function MemoryVault({ onCardClick }) {
       img: '/vault_nusa_penida.jpg',
       desc: 'We slept at 2 woke up at 4, traveled all the way in ferry to Nusa Penida, just to run back to hotel in literally 30 mins.! I think I still have sunburns & am horrified that we travelled all the way just to click pictures at some famous spots 😂',
       matchRate: '99% Sunburnt',
-      year: '2025'
+      year: '2025',
+      objectPosition: 'top'
     },
     {
       id: 'v6',
@@ -254,7 +257,7 @@ export default function MemoryVault({ onCardClick }) {
                 <img 
                   src={memory.img} 
                   alt={memory.title} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: memory.objectPosition || 'center' }}
                   loading="lazy"
                 />
                 <span style={{
