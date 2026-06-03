@@ -546,7 +546,7 @@ export default function App() {
       {/* Global Memory Detail Modal Lightbox */}
       {selectedMemory && (
         <div className="modal-overlay" onClick={() => setSelectedMemory(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className={`modal-content ${selectedMemory.id?.startsWith('v') ? 'vault-modal' : ''}`} onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={() => setSelectedMemory(null)}>
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>

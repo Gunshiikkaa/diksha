@@ -1830,4 +1830,33 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-color: var(--netflix-red);
 }
 
+/* Vault Modal Portrait Styles */
+.modal-content.vault-modal {
+  max-width: 500px;
+}
+
+.modal-content.vault-modal .modal-image-wrapper {
+  aspect-ratio: 3/4;
+}
+
+.modal-content.vault-modal .modal-body {
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.modal-content.vault-modal .modal-side-info {
+  border-left: none;
+  padding-left: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.modal-content.vault-modal .modal-side-info > div {
+  flex: 1 1 100px;
+}
+
+
 

@@ -237,7 +237,7 @@ export default function MemoryVault({ onCardClick }) {
                 transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
                 border: '1px solid #222',
                 boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-                aspectRatio: '16/10'
+                aspectRatio: '3/4'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.04) translateY(-5px)';
@@ -250,7 +250,7 @@ export default function MemoryVault({ onCardClick }) {
                 e.currentTarget.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
               }}
             >
-              <div style={{ position: 'relative', width: '100%', height: '65%' }}>
+              <div style={{ position: 'relative', width: '100%', height: '80%' }}>
                 <img 
                   src={memory.img} 
                   alt={memory.title} 
@@ -272,7 +272,7 @@ export default function MemoryVault({ onCardClick }) {
                   {memory.category}
                 </span>
               </div>
-              <div style={{ padding: '0.85rem', height: '35%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ padding: '0.85rem', height: '20%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{ fontWeight: 700, fontSize: '1rem', color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   {memory.title}
                 </div>
