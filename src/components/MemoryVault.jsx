@@ -9,13 +9,13 @@ export default function MemoryVault({ onCardClick }) {
   const memories = [
     {
       id: 'v1',
-      title: 'The Sunset Café',
-      category: 'Trips',
-      date: 'May 12, 2024',
-      location: 'Mountain Vista Café',
-      img: '/couple_sunset_date.png',
-      desc: 'After driving for three hours through winding mountain passes, we stumbled upon this small, wooden cabin café right as the sun began to sink. We sat on the balcony sipping hazelnut lattes, watching the pine trees turn into golden silhouettes.',
-      matchRate: '98% Match',
+      title: 'The Chai Incident 🤪',
+      category: 'Silly',
+      date: '2024',
+      location: 'Garden',
+      img: '/vault_chai_garden.jpg',
+      desc: 'The time I wanted to impress everyone & bought my handmade Chai in garden & ended up becoming the joke of the day to a very beautiful day 🤪',
+      matchRate: '100% Comedy',
       year: '2024'
     },
     {
