@@ -75,25 +75,47 @@ export default function MemoryVault({ onCardClick }) {
     },
     {
       id: 'v7',
-      title: 'Anniversary Celebration',
+      title: 'Cutest Day Ever 🧿',
       category: 'Dates',
-      date: 'Oct 24, 2025',
-      location: 'The Glasshouse Bistro',
-      img: '/couple_anniversary_dinner.png',
-      desc: 'Celebrating two years of incredible memories. We dressed up, shared a chef-special degustation menu, and spent the entire dinner reminiscing about how we met and making plans for the seasons ahead.',
-      matchRate: '99.8% Perfect',
-      year: '2025'
+      date: '2024',
+      location: 'Home',
+      img: '/vault_cutest_day.png',
+      desc: 'Cutest day with loads of efforts. One of the best days 🧿',
+      matchRate: '100% Adorable',
+      year: '2024'
     },
     {
       id: 'v8',
-      title: 'The First Coffee Date',
+      title: 'Stuck Like Glue 🤍',
       category: 'Dates',
-      date: 'Nov 4, 2023',
-      location: 'Corner Cafe',
-      img: '/couple_first_date.png',
-      desc: 'The beginning of our timeline. Two nervous people ordering cappuccinos, talking about their favorite movies, and smiling uncontrollably. That 2-hour conversation felt like 10 minutes, and we both knew we wanted a second date.',
-      matchRate: '99% Match',
-      year: '2023'
+      date: '2024',
+      location: 'Wedding Hall',
+      img: '/vault_wedding_hall.png',
+      desc: 'In the hall full of hundreds of people we still find comfort in each other, still are stuck as glue with each other\'s company 🤍',
+      matchRate: '99.8% Perfect',
+      year: '2024'
+    },
+    {
+      id: 'v9',
+      title: 'The Great Burger Hunt 🍔',
+      category: 'Silly',
+      date: '2025',
+      location: 'Goa',
+      img: '/vault_burger_hunt.png',
+      desc: 'We got all ready to not find the restaurant for an hour.! Seriously google maps need fixing 😂 & waiting for our burgers for an extra hour.! I know you don\'t even like burgers & were there just for me.! But literally waiting till 6pm for lunch.! Itne toh mujhe bhi burger nahi pasand 😂🫠🫠',
+      matchRate: '100% Hangry',
+      year: '2025'
+    },
+    {
+      id: 'v10',
+      title: 'Cliff Hanger Chronicles 🧗‍♀️',
+      category: 'Trips',
+      date: '2025',
+      location: 'Bali',
+      img: '/vault_cliff_slip.png',
+      desc: 'I slipped THRICE this day.! Once literally off a cliff, even our guide was traumatised 😂 But I guess you were used to it by then 😂 I guess this day you learned the hard way to never leave my hand even for a moment. Literally 😂',
+      matchRate: '100% Survival',
+      year: '2025'
     }
   ];
 
