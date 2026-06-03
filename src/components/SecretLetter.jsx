@@ -222,7 +222,7 @@ export default function SecretLetter() {
               </p>
               <div className="love-letter-footer">
                 <p>Forever yours,</p>
-                <p style={{ color: 'var(--netflix-red-hover)', fontSize: '2.4rem', marginTop: '0.5rem' }}>Isha ❤️</p>
+                <p style={{ color: 'var(--netflix-red-hover)', fontSize: '2.4rem', marginTop: '0.5rem' }}>Diksha ❤️</p>
               </div>
             </div>
           </div>
