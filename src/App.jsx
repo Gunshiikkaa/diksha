@@ -803,7 +803,7 @@ export default function App() {
           <span>Contact Vatsal</span>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <p>© 2026 CoupleFlix Inc. Crafted with ❤️ for Muskan.</p>
+          <p>© 2026 CoupleFlix Inc. Crafted with ❤️ for Diksha.</p>
           <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.5 }}>
             All characters and memories in this series are entirely real and cherished. Any similarity to other love stories is purely coincidental.
           </p>
