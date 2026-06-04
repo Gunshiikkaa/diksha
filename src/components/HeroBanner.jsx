@@ -55,33 +55,33 @@ export default function HeroBanner({ activeProfile }) {
       id: "slide-cinema",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
-      img: "/slideshow/slide_cinema.jpg",
+      img: "/slideshow/slide3.jpg",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "99.2% Match",
       year: "2025",
       seasons: "Season 2 Finale",
       tags: "Romantic • Cozy • Original",
-      objectPosition: "center 40%"
+      objectPosition: "center 25%"
     },
     {
       id: "slide-selfie",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
-      img: "/slideshow/slide_selfie.jpg",
+      img: "/slideshow/slide4.png",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "99.5% Match",
       year: "2025",
       seasons: "Ongoing Series",
       tags: "Fun • Candid • Sweet",
-      objectPosition: "center 35%"
+      objectPosition: "center 30%"
     },
     {
       id: "slide-couple",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
-      img: "/slideshow/slide_couple.jpg",
+      img: "/slideshow/slide5.png",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "99.8% Perfect",
