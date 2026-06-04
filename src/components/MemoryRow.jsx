@@ -85,7 +85,7 @@ export default function MemoryRow({ title, subtitle, items, onCardClick, variant
                   onClick={() => onCardClick(item)}
                 >
                   <div className="top4-card-image-container">
-                    <img src={item.img} className="top4-card-image" alt={item.title} style={{ objectPosition: item.objectPosition || 'center' }} />
+                    <img src={item.img} className="top4-card-image" alt={item.title} style={{ '--object-position': item.objectPosition || 'center' }} />
                     <div className="top4-card-gradient"></div>
                     <div className="top4-card-title">{item.title}</div>
                   </div>
@@ -106,7 +106,7 @@ export default function MemoryRow({ title, subtitle, items, onCardClick, variant
                     className="memories-card-image" 
                     alt={item.title} 
                     loading="lazy"
-                    style={{ objectPosition: item.objectPosition || 'center' }}
+                    style={{ '--object-position': item.objectPosition || 'center' }}
                   />
                 </div>
                 
@@ -140,7 +140,7 @@ export default function MemoryRow({ title, subtitle, items, onCardClick, variant
                   className="memory-card-image" 
                   alt={item.title} 
                   loading="lazy"
-                  style={{ objectPosition: item.objectPosition || 'center' }}
+                  style={{ '--object-position': item.objectPosition || 'center' }}
                 />
                 
                 <div className="memory-card-overlay">

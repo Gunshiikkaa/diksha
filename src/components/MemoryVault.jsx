@@ -257,7 +257,8 @@ export default function MemoryVault({ onCardClick }) {
                 <img 
                   src={memory.img} 
                   alt={memory.title} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: memory.objectPosition || 'center' }}
+                  className="vault-card-image"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', '--object-position': memory.objectPosition || 'center' }}
                   loading="lazy"
                 />
                 <span style={{

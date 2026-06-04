@@ -565,7 +565,7 @@ export default function App() {
                 src={selectedMemory.img} 
                 className="modal-image" 
                 alt={selectedMemory.title} 
-                style={{ objectPosition: selectedMemory.objectPosition || 'center' }}
+                style={{ '--object-position': selectedMemory.objectPosition || 'center' }}
               />
               <div className="modal-gradient"></div>
               <div style={{
