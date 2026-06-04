@@ -94,14 +94,14 @@ export default function HeroBanner({ activeProfile }) {
       id: "slide-spark",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
-      img: "/slideshow/IMG_2069.JPG.jpeg",
+      img: "/slideshow/slide6.png",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "97% Match",
       year: "2023",
       seasons: "Episode 2",
       tags: "Heartfelt • Inspiring • Original",
-      objectPosition: "center 85%"
+      objectPosition: "center 30%"
     },
     {
       id: "slide-road-trip",
