@@ -245,7 +245,7 @@ export default function App() {
     {
       id: 'c1',
       title: '6 Months',
-      img: '/top4/6months.jpg',
+      img: '/top4/6months.png',
       desc: 'Our forever is only 6 months old, but it\'s already my favorite story.',
       matchRate: '99% Match',
       year: '2026',
@@ -253,12 +253,12 @@ export default function App() {
       date: '30 May 2026',
       tags: 'Heartfelt • Milestone • Original',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-standing-close-under-a-tree-42525-large.mp4',
-      objectPosition: 'top'
+      objectPosition: 'center'
     },
     {
       id: 'c2',
       title: 'Goa',
-      img: '/top4/goa.jpg',
+      img: '/top4/goa.png',
       desc: 'Even with people around us , we enjoy each other company, exploring new places & singing madly on roads while chasing sunsets',
       matchRate: '98% Match',
       year: '2026',
@@ -266,7 +266,7 @@ export default function App() {
       date: '3 May 2026',
       tags: 'Adventure • Travel • Romantic',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-holding-hands-and-running-on-the-beach-29009-large.mp4',
-      objectPosition: 'top'
+      objectPosition: 'center'
     },
     {
       id: 'c3',
@@ -279,7 +279,7 @@ export default function App() {
       date: '5 April 2026',
       tags: 'Sweet • Celebration • Cozy',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-lights-of-a-happy-birthday-candle-burning-43285-large.mp4',
-      objectPosition: 'top'
+      objectPosition: 'center'
     },
     {
       id: 'c4',
@@ -292,7 +292,7 @@ export default function App() {
       date: '14 February 2026',
       tags: 'Cozy • Romantic • Sweet',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-heart-shaped-balloons-floating-in-the-air-43292-large.mp4',
-      objectPosition: 'top'
+      objectPosition: 'center'
     }
   ];
 
