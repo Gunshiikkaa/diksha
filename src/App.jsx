@@ -279,7 +279,7 @@ export default function App() {
       date: '5 April 2026',
       tags: 'Sweet • Celebration • Cozy',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-lights-of-a-happy-birthday-candle-burning-43285-large.mp4',
-      objectPosition: 'center'
+      objectPosition: 'center calc(50% - 6px)'
     },
     {
       id: 'c4',
