@@ -94,14 +94,15 @@ export default function HeroBanner({ activeProfile }) {
       id: "slide-spark",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
-      img: "/slideshow/slide6.png",
+      img: "/slideshow/IMG_2069.JPG.jpeg",
+      slideshowImg: "/slideshow/slide6.png",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "97% Match",
       year: "2023",
       seasons: "Episode 2",
       tags: "Heartfelt • Inspiring • Original",
-      objectPosition: "center 30%"
+      objectPosition: "center 85%"
     },
     {
       id: "slide-road-trip",
@@ -539,7 +540,7 @@ export default function HeroBanner({ activeProfile }) {
             {slides.map((slide, idx) => (
               idx === currentSlide && (
                 <div key={idx} className="slideshow-slide">
-                  <img src={slide.img} className="slideshow-image" alt={slide.title} />
+                  <img src={slide.slideshowImg || slide.img} className="slideshow-image" alt={slide.title} />
                   
                   <div className="slideshow-info">
                     <div style={{
