@@ -271,7 +271,7 @@ export default function App() {
     {
       id: 'c3',
       title: 'Birthday',
-      img: '/top4/birthday.jpeg',
+      img: '/top4/birthday.png',
       desc: 'pasand hai tume malum hai, tumne bataya tha ek dafe. - every lyrics to this song , my every wish, fulfilled by my G(irish)enie',
       matchRate: '99.5% Match',
       year: '2026',
