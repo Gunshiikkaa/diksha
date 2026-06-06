@@ -141,7 +141,12 @@ export default function HeroBanner({ activeProfile }) {
       tags: "Wedding Eve • Emotional • Calm",
       objectPosition: "center"
     }
-  ];
+  ].map(slide => ({
+    ...slide,
+    img: slide.img.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${slide.img.slice(1)}` : slide.img,
+    videoUrl: slide.videoUrl && slide.videoUrl.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${slide.videoUrl.slice(1)}` : slide.videoUrl,
+    slideshowImg: slide.slideshowImg && slide.slideshowImg.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${slide.slideshowImg.slice(1)}` : slide.slideshowImg
+  }));
 
   // Silky Smooth Custom Real-time Slider Timer with Hover Pause
   const slideDuration = 9000; // 9 seconds per slide for relaxed reading
@@ -462,7 +467,7 @@ export default function HeroBanner({ activeProfile }) {
             
             <div className="modal-image-wrapper">
               <img 
-                src="/slideshow/IMG_2083.JPG.jpeg" 
+                src={`${import.meta.env.BASE_URL || '/'}slideshow/IMG_2083.JPG.jpeg`} 
                 className="modal-image" 
                 alt="Love Story info cover" 
                 style={{ objectPosition: 'center 30%' }}

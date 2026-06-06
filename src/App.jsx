@@ -37,7 +37,7 @@ export default function App() {
     localStorage.getItem('spotlightQuote_v3') || "You never know the value of a moment, until it becomes a memory that stays with you forever."
   );
   const [spotlightImage, setSpotlightImage] = useState(() => 
-    localStorage.getItem('spotlightImage_v3') || "/wedding_moment.png"
+    localStorage.getItem('spotlightImage_v3') || `${import.meta.env.BASE_URL || '/'}wedding_moment.png`
   );
 
 
@@ -294,7 +294,11 @@ export default function App() {
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-heart-shaped-balloons-floating-in-the-air-43292-large.mp4',
       objectPosition: 'center'
     }
-  ];
+  ].map(item => ({
+    ...item,
+    img: item.img.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${item.img.slice(1)}` : item.img,
+    videoUrl: item.videoUrl && item.videoUrl.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${item.videoUrl.slice(1)}` : item.videoUrl
+  }));
 
   const trendingNowItems = [
     {
@@ -349,7 +353,11 @@ export default function App() {
       videoUrl: '/video/video4.mp4',
       objectPosition: 'center'
     }
-  ];
+  ].map(item => ({
+    ...item,
+    img: item.img.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${item.img.slice(1)}` : item.img,
+    videoUrl: item.videoUrl && item.videoUrl.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${item.videoUrl.slice(1)}` : item.videoUrl
+  }));
 
   if (!activeProfile) {
     return <IntroScreen onProfileSelect={setActiveProfile} />;
@@ -432,7 +440,11 @@ export default function App() {
               <div className="spotlight-section">
                 {/* Left Side Image Card */}
                 <div className="spotlight-image-wrapper">
-                  <img src={spotlightImage} className="spotlight-image" alt="Featured spotlight" />
+                  <img 
+                    src={spotlightImage.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${spotlightImage.slice(1)}` : spotlightImage} 
+                    className="spotlight-image" 
+                    alt="Featured spotlight" 
+                  />
                   <div className="spotlight-badge">
                     <span className="spotlight-badge-dot"></span>
                     FEATURED MEMORY

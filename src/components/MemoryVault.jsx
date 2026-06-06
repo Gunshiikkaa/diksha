@@ -117,7 +117,10 @@ export default function MemoryVault({ onCardClick }) {
       matchRate: '100% Survival',
       year: '2025'
     }
-  ];
+  ].map(memory => ({
+    ...memory,
+    img: memory.img.startsWith('/') ? `${import.meta.env.BASE_URL || '/'}${memory.img.slice(1)}` : memory.img
+  }));
 
   const filteredMemories = memories.filter((memory) => {
     const matchesCategory = activeFilter === 'All' || memory.category === activeFilter;
