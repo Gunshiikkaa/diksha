@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Video assets
-public/video/
+# Video assets (large files - served locally only)
+public/video/video3.mp4
+public/video/video4.mp4
 video/
