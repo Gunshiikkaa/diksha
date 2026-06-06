@@ -299,55 +299,55 @@ export default function App() {
   const trendingNowItems = [
     {
       id: 't1',
-      title: 'The Engagement Story',
+      title: 'Season 1 : Completed',
       img: '/slideshow/IMG_2083.JPG.jpeg',
-      desc: 'The moment two hearts became one promise — surrounded by love, lights, and a lifetime of memories waiting to unfold.',
+      desc: '365 days, countless memories, endless laughter, silly moments, and the love that keeps getting better with each season',
       matchRate: '99% Match',
       year: '2024',
-      location: 'Special Venue',
+      location: 'Home',
       date: 'Oct 24, 2024',
-      tags: 'Heartfelt • Milestone • Original',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-sitting-in-a-cafe-drinking-coffee-40156-large.mp4',
+      tags: 'Romantic • Sweet • Memories',
+      videoUrl: '/video/video 1.mp4',
       objectPosition: 'top'
     },
     {
       id: 't2',
-      title: 'Us at the Beach',
-      img: '/slideshow/IMG_2073.JPG.jpeg',
-      desc: 'Even with people around us, we enjoy each other\'s company — exploring new places and chasing sunsets together.',
-      matchRate: '98% Match',
-      year: '2023',
-      location: 'Beach',
-      date: '2023',
-      tags: 'Adventure • Travel • Romantic',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-starry-night-sky-with-clouds-flowing-4050-large.mp4',
-      objectPosition: 'top'
+      title: 'The Night Everything Changed ✨',
+      img: '/slideshow/slide6_v2.png',
+      desc: 'A birthday party that became our love story’s favorite episode—he got down on one knee, we danced till 6 AM, and a fairy tale to forever quietly began. ❤️🥂💍\n\n1 year to this day🤍🧿',
+      matchRate: '99.5% Match',
+      year: '2024',
+      location: 'Birthday Party',
+      date: 'April 2025',
+      tags: 'Proposal • Celebration • Love',
+      videoUrl: '/video/video 2.mp4',
+      objectPosition: 'center'
     },
     {
       id: 't3',
-      title: 'A Match Made in Heaven',
+      title: 'The Alibaug Chapter 🤍',
       img: '/slideshow/IMG_8577.JPG.jpeg',
-      desc: 'It was written in the stars — every laugh, every glance, every stolen moment leading to this forever.',
-      matchRate: '99.8% Perfect',
-      year: '2026',
-      location: 'Special Event',
-      date: '2026',
-      tags: 'Romantic • Special • Dreamy',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-on-a-sandy-beach-at-sunset-29007-large.mp4',
+      desc: 'What was supposed to be a pre-wedding shoot became one of the sweetest memories of our courtship. Between the chaos, the camera, the outfit changes, and my dramatic exhaustion (Ironically, after asking you not to get tired before finishing all the looks, I was the one ready to give up first, practically sobbing and begging), there was you—making every moment feel effortless, magical, and worth remembering forever. ✨❤️',
+      matchRate: '99.2% Match',
+      year: '2025',
+      location: 'Alibaug',
+      date: 'Courtship',
+      tags: 'Pre-Wedding • Fun • Effortless',
+      videoUrl: '/video/video 3.mp4',
       objectPosition: 'top'
     },
     {
       id: 't4',
-      title: 'Season 2 Finale',
-      img: '/slideshow/IMG_8556.JPG.jpeg',
-      desc: 'The grand finale of chapter two — a celebration of every adventure, every memory, every reason we chose each other.',
-      matchRate: '99.2% Match',
-      year: '2025',
-      location: 'Special Venue',
-      date: 'Oct 24, 2025',
-      tags: 'Fancy • Anniversary • Special',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-at-a-dinner-party-43309-large.mp4',
-      objectPosition: 'top'
+      title: 'The Night Before Our Wedding',
+      img: '/wedding_moment.png',
+      desc: 'The night before our wedding was everything I could have wished for. There was music, laughter, endless celebrations, and a heart full of emotions. While I was a whirlwind of excitement and nerves, you stood beside me with your calmness and that reassuring smile that somehow makes everything feel okay. That night, more than ever, I realized that no matter how chaotic my emotions get, you know exactly how to hold my hand through them, I realised that your calm heart could handle every storm in mine. And if this was how we were starting forever, I knew I was exactly where I belonged. ❤️',
+      matchRate: '100% Perfect',
+      year: '2026',
+      location: 'Wedding Venue',
+      date: 'Sangeet Night',
+      tags: 'Wedding Eve • Emotional • Calm',
+      videoUrl: '/video/video 4.mp4',
+      objectPosition: 'center'
     }
   ];
 
@@ -605,7 +605,7 @@ export default function App() {
 
             <div className="modal-body" style={{ padding: '1.5rem 2rem' }}>
               <div className="modal-main-info" style={{ flex: 2 }}>
-                <p style={{ fontSize: '1rem', lineHeight: '1.5', color: '#e5e5e5' }}>
+                <p style={{ fontSize: '1rem', lineHeight: '1.5', color: '#e5e5e5', whiteSpace: 'pre-line' }}>
                   {selectedMemory.desc}
                 </p>
 
