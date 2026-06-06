@@ -816,8 +816,8 @@ export default function App() {
             {playingVideoUrl.includes('drive.google.com') || playingVideoUrl.includes('docs.google.com') ? (
               <iframe
                 src={getGoogleDriveEmbedUrl(playingVideoUrl)}
-                width="100%"
                 style={{ 
+                  width: '100%',
                   aspectRatio: '16/9', 
                   borderRadius: '8px', 
                   border: '1px solid #333', 
