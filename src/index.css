@@ -554,13 +554,32 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
+  background-color: #0c0c0c;
+}
+
+.modal-image-blur-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(15px) brightness(0.4);
+  transform: scale(1.05);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .modal-image {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: var(--object-position, center) !important;
+  z-index: 2;
+}
+
+.detailed-memory-modal .modal-image {
+  object-fit: contain !important;
 }
 
 .vault-card-image {
@@ -571,6 +590,8 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, #181818 0%, transparent 60%);
+  z-index: 3;
+  pointer-events: none;
 }
 
 .modal-body {
@@ -1881,7 +1902,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal-content.vault-modal .modal-image-wrapper {
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3;
 }
 
 .modal-content.vault-modal .modal-body {
