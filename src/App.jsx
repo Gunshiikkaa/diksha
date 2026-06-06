@@ -307,7 +307,7 @@ export default function App() {
       location: 'Home',
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
-      videoUrl: '/video/video 1.mp4',
+      videoUrl: '/video/video1.mp4',
       objectPosition: 'top'
     },
     {
@@ -320,7 +320,7 @@ export default function App() {
       location: 'Birthday Party',
       date: 'April 2025',
       tags: 'Proposal • Celebration • Love',
-      videoUrl: '/video/video 2.mp4',
+      videoUrl: '/video/video2.mp4',
       objectPosition: 'center'
     },
     {
@@ -333,7 +333,7 @@ export default function App() {
       location: 'Alibaug',
       date: 'Courtship',
       tags: 'Pre-Wedding • Fun • Effortless',
-      videoUrl: '/video/video 3.mp4',
+      videoUrl: '/video/video3.mp4',
       objectPosition: 'top'
     },
     {
@@ -346,7 +346,7 @@ export default function App() {
       location: 'Wedding Venue',
       date: 'Sangeet Night',
       tags: 'Wedding Eve • Emotional • Calm',
-      videoUrl: '/video/video 4.mp4',
+      videoUrl: '/video/video4.mp4',
       objectPosition: 'center'
     }
   ];

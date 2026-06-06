@@ -36,7 +36,7 @@ export default function HeroBanner({ activeProfile }) {
       seasons: "Pilot Episode",
       tags: "Sweet • Cozy • Romantic",
       isVideo: true,
-      videoUrl: "/video/video 1.mp4",
+      videoUrl: "/video/video1.mp4",
       objectPosition: "center 30%"
     },
     {
@@ -64,7 +64,7 @@ export default function HeroBanner({ activeProfile }) {
       seasons: "The Alibaug Chapter",
       tags: "Pre-Wedding • Courtship • Romantic",
       isVideo: true,
-      videoUrl: "/video/video 3.mp4",
+      videoUrl: "/video/video3.mp4",
       objectPosition: "top"
     },
     {
@@ -106,7 +106,7 @@ export default function HeroBanner({ activeProfile }) {
       tags: "Heartfelt • Inspiring • Original",
       objectPosition: "center 30%",
       isVideo: true,
-      videoUrl: "/video/video 2.mp4"
+      videoUrl: "/video/video2.mp4"
     },
     {
       id: "slide-road-trip",
@@ -146,7 +146,7 @@ export default function HeroBanner({ activeProfile }) {
       seasons: "The Wedding Eve",
       tags: "Wedding Eve • Emotional • Calm",
       isVideo: true,
-      videoUrl: "/video/video 4.mp4",
+      videoUrl: "/video/video4.mp4",
       objectPosition: "center"
     }
   ];
