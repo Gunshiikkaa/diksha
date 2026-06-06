@@ -13,11 +13,10 @@ export default function MemoryVault({ onCardClick }) {
       category: 'Silly',
       date: '2024',
       location: 'Garden',
-      img: '/vault_chai_garden.jpg',
+      img: '/vault_chai_garden_v2.png',
       desc: 'The time I wanted to impress everyone & bought my handmade Chai in garden & ended up becoming the joke of the day to a very beautiful day 🤪',
       matchRate: '100% Comedy',
-      year: '2024',
-      objectPosition: 'top'
+      year: '2024'
     },
     {
       id: 'v2',
@@ -58,11 +57,10 @@ export default function MemoryVault({ onCardClick }) {
       category: 'Trips',
       date: '2025',
       location: 'Nusa Penida, Bali',
-      img: '/vault_nusa_penida.jpg',
+      img: '/vault_nusa_penida_v2.png',
       desc: 'We slept at 2 woke up at 4, traveled all the way in ferry to Nusa Penida, just to run back to hotel in literally 30 mins.! I think I still have sunburns & am horrified that we travelled all the way just to click pictures at some famous spots 😂',
       matchRate: '99% Sunburnt',
-      year: '2025',
-      objectPosition: 'top'
+      year: '2025'
     },
     {
       id: 'v6',
