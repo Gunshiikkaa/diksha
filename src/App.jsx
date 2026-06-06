@@ -16,6 +16,19 @@ let audioCtx = null;
 let musicTimer = null;
 let currentChordIdx = 0;
 
+const getGoogleDriveEmbedUrl = (url) => {
+  if (!url) return '';
+  let match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (match && match[1]) {
+    return `https://drive.google.com/file/d/${match[1]}/preview`;
+  }
+  match = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (match && match[1]) {
+    return `https://drive.google.com/file/d/${match[1]}/preview`;
+  }
+  return url;
+};
+
 export default function App() {
   const [activeProfile, setActiveProfile] = useState(null);
   const [activeTab, setActiveTab] = useState('home');
@@ -337,7 +350,7 @@ export default function App() {
       location: 'Alibaug',
       date: 'Courtship',
       tags: 'Pre-Wedding • Fun • Effortless',
-      videoUrl: 'https://docs.google.com/uc?export=download&id=1vioJO4I4lk6YsCeYxuj6THWu68R6sgv5',
+      videoUrl: 'https://drive.google.com/file/d/1vioJO4I4lk6YsCeYxuj6THWu68R6sgv5/view?usp=drive_link',
       objectPosition: 'center'
     },
     {
@@ -350,7 +363,7 @@ export default function App() {
       location: 'Wedding Venue',
       date: 'Sangeet Night',
       tags: 'Wedding Eve • Emotional • Calm',
-      videoUrl: '/video/video4.mp4',
+      videoUrl: 'https://drive.google.com/file/d/1H-wOSVqPLzabeFb-MKp4UcFuPYR8PyPE/view?usp=drive_link',
       objectPosition: 'center'
     }
   ].map(item => ({
@@ -800,17 +813,33 @@ export default function App() {
             BACK TO BROWSE
           </button>
           <div className="video-container" onClick={(e) => e.stopPropagation()} style={{ width: '80%', maxAspect: '16/9', position: 'relative' }}>
-            <video 
-              key={playingVideoUrl}
-              controls 
-              autoPlay
-              playsInline
-              style={{ width: '100%', borderRadius: '8px', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}
-              onEnded={() => setPlayingVideoUrl(null)}
-            >
-              <source src={playingVideoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            {playingVideoUrl.includes('drive.google.com') || playingVideoUrl.includes('docs.google.com') ? (
+              <iframe
+                src={getGoogleDriveEmbedUrl(playingVideoUrl)}
+                width="100%"
+                style={{ 
+                  aspectRatio: '16/9', 
+                  borderRadius: '8px', 
+                  border: '1px solid #333', 
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.9)',
+                  background: '#000'
+                }}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <video 
+                key={playingVideoUrl}
+                controls 
+                autoPlay
+                playsInline
+                style={{ width: '100%', borderRadius: '8px', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}
+                onEnded={() => setPlayingVideoUrl(null)}
+              >
+                <source src={playingVideoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
         </div>
       )}
