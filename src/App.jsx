@@ -300,7 +300,7 @@ export default function App() {
     {
       id: 't1',
       title: 'Season 1 : Completed',
-      img: '/slideshow/IMG_2083.JPG.jpeg',
+      img: '/movie1.png',
       desc: '365 days, countless memories, endless laughter, silly moments, and the love that keeps getting better with each season',
       matchRate: '99% Match',
       year: '2024',
@@ -308,7 +308,7 @@ export default function App() {
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
       videoUrl: '/video/video1.mp4',
-      objectPosition: 'bottom'
+      objectPosition: 'center'
     },
     {
       id: 't2',
