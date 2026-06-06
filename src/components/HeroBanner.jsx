@@ -35,8 +35,6 @@ export default function HeroBanner({ activeProfile }) {
       year: "2023",
       seasons: "Pilot Episode",
       tags: "Sweet • Cozy • Romantic",
-      isVideo: true,
-      videoUrl: "/video/video1.mp4",
       objectPosition: "center 30%"
     },
     {
@@ -63,8 +61,6 @@ export default function HeroBanner({ activeProfile }) {
       year: "2025",
       seasons: "The Alibaug Chapter",
       tags: "Pre-Wedding • Courtship • Romantic",
-      isVideo: true,
-      videoUrl: "/video/video3.mp4",
       objectPosition: "top"
     },
     {
@@ -104,9 +100,7 @@ export default function HeroBanner({ activeProfile }) {
       year: "2023",
       seasons: "Episode 2",
       tags: "Heartfelt • Inspiring • Original",
-      objectPosition: "center 30%",
-      isVideo: true,
-      videoUrl: "/video/video2.mp4"
+      objectPosition: "center 30%"
     },
     {
       id: "slide-road-trip",
@@ -145,8 +139,6 @@ export default function HeroBanner({ activeProfile }) {
       year: "2026",
       seasons: "The Wedding Eve",
       tags: "Wedding Eve • Emotional • Calm",
-      isVideo: true,
-      videoUrl: "/video/video4.mp4",
       objectPosition: "center"
     }
   ];
