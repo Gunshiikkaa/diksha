@@ -35,7 +35,8 @@ export default function HeroBanner({ activeProfile }) {
       year: "2023",
       seasons: "Pilot Episode",
       tags: "Sweet • Cozy • Romantic",
-      isVideo: false,
+      isVideo: true,
+      videoUrl: "/video/video 1.mp4",
       objectPosition: "center 30%"
     },
     {
@@ -55,14 +56,16 @@ export default function HeroBanner({ activeProfile }) {
       id: "slide-cinema",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
-      img: "/slideshow/slide3.jpg",
+      img: "/slideshow/IMG_8577.JPG.jpeg",
       date: "Now streaming in our hearts forever",
       subtitle: "Now streaming in our hearts forever",
       matchRate: "99.2% Match",
       year: "2025",
-      seasons: "Season 2 Finale",
-      tags: "Romantic • Cozy • Original",
-      objectPosition: "center 25%"
+      seasons: "The Alibaug Chapter",
+      tags: "Pre-Wedding • Courtship • Romantic",
+      isVideo: true,
+      videoUrl: "/video/video 3.mp4",
+      objectPosition: "top"
     },
     {
       id: "slide-selfie",
@@ -91,6 +94,21 @@ export default function HeroBanner({ activeProfile }) {
       objectPosition: "center 30%"
     },
     {
+      id: "slide-spark",
+      title: "the greatest love story ever made:us",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
+      img: "/slideshow/slide6_v2.png",
+      date: "Now streaming in our hearts forever",
+      subtitle: "Now streaming in our hearts forever",
+      matchRate: "97% Match",
+      year: "2023",
+      seasons: "Episode 2",
+      tags: "Heartfelt • Inspiring • Original",
+      objectPosition: "center 30%",
+      isVideo: true,
+      videoUrl: "/video/video 2.mp4"
+    },
+    {
       id: "slide-road-trip",
       title: "the greatest love story ever made:us",
       desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
@@ -115,6 +133,21 @@ export default function HeroBanner({ activeProfile }) {
       seasons: "Episode 5",
       tags: "Warm • Cosy • Emotional",
       objectPosition: "center 25%"
+    },
+    {
+      id: "slide-wedding",
+      title: "the greatest love story ever made:us",
+      desc: "A heartfelt documentary chronicling the laughter, adventures, late-night conversations, and countless memories of two souls who found home in each other. Featuring inside jokes, unwavering support, and a love that grew stronger with every chapter. Now streaming in each other's hearts, forever and always.",
+      img: "/wedding_moment.png",
+      date: "Now streaming in our hearts forever",
+      subtitle: "Now streaming in our hearts forever",
+      matchRate: "100% Perfect",
+      year: "2026",
+      seasons: "The Wedding Eve",
+      tags: "Wedding Eve • Emotional • Calm",
+      isVideo: true,
+      videoUrl: "/video/video 4.mp4",
+      objectPosition: "center"
     }
   ];
 
@@ -210,7 +243,7 @@ export default function HeroBanner({ activeProfile }) {
                   pointerEvents: 'none'
                 }}
               >
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-and-walking-in-a-field-3428-large.mp4" type="video/mp4" />
+                <source src={slide.videoUrl} type="video/mp4" />
               </video>
             );
           }
