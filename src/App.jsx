@@ -337,7 +337,7 @@ export default function App() {
       location: 'Alibaug',
       date: 'Courtship',
       tags: 'Pre-Wedding • Fun • Effortless',
-      videoUrl: '/video/video3.mp4',
+      videoUrl: 'https://docs.google.com/uc?export=download&id=1vioJO4I4lk6YsCeYxuj6THWu68R6sgv5',
       objectPosition: 'center'
     },
     {
