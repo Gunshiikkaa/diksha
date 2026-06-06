@@ -789,13 +789,16 @@ export default function App() {
           </button>
           <div className="video-container" onClick={(e) => e.stopPropagation()} style={{ width: '80%', maxAspect: '16/9', position: 'relative' }}>
             <video 
-              src={playingVideoUrl} 
+              key={playingVideoUrl}
               controls 
-              autoPlay 
+              autoPlay
               playsInline
               style={{ width: '100%', borderRadius: '8px', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}
               onEnded={() => setPlayingVideoUrl(null)}
-            />
+            >
+              <source src={playingVideoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}
