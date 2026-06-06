@@ -415,7 +415,7 @@ export default function App() {
             
             <div className="rows-container">
               <MemoryRow 
-                title="Memories" 
+                title="movies" 
                 subtitle="Click any card to read the full episode description and view reaction details."
                 items={trendingNowItems} 
                 onCardClick={setSelectedMemory} 
