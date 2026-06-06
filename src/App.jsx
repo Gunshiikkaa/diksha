@@ -193,10 +193,7 @@ export default function App() {
       setIsMusicPlaying(false);
     } else {
       setIsMusicPlaying(true);
-      // Wait for brief user interaction confirmation block resolution
-      setTimeout(() => {
-        startAmbientMusic();
-      }, 50);
+      startAmbientMusic();
     }
   };
 

@@ -781,11 +781,20 @@ export default function CinematicEnding({ memories, onViewTimeline }) {
         ref={iframeRef}
         width="1"
         height="1"
-        src="https://www.youtube.com/embed/gkCKTuR-ECI?enablejsapi=1"
+        src="https://www.youtube.com/embed/gkCKTuR-ECI?enablejsapi=1&playsinline=1"
         title="Theme Song Audio"
         frameBorder="0"
         allow="autoplay"
-        style={{ position: 'absolute', top: '-9999px', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+        style={{
+          position: 'fixed',
+          bottom: '10px',
+          right: '10px',
+          width: '1px',
+          height: '1px',
+          opacity: 0.01,
+          pointerEvents: 'none',
+          zIndex: -1
+        }}
       ></iframe>
 
       {/* Embedded CSS Animations */}

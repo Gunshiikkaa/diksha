@@ -229,6 +229,34 @@ export default function IntroScreen({ onProfileSelect }) {
         >
           Manage Profiles
         </button>
+
+        {/* Mobile Audio Tip / Alert */}
+        <div style={{
+          marginTop: '2.5rem',
+          padding: '0.75rem 1.25rem',
+          backgroundColor: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          borderRadius: '8px',
+          maxWidth: '420px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          textAlign: 'left'
+        }}>
+          <div style={{ fontSize: '1.25rem' }}>🔊</div>
+          <p style={{
+            margin: 0,
+            fontSize: '0.75rem',
+            color: '#888',
+            lineHeight: '1.4',
+            fontFamily: 'var(--font-outfit)'
+          }}>
+            <strong style={{ color: '#aaa', display: 'block', marginBottom: '2px' }}>Mobile Users Sound Tip</strong>
+            If you cannot hear sound on your phone, please make sure your physical <strong>Silent/Mute Switch</strong> is turned off and your volume is turned up!
+          </p>
+        </div>
       </div>
     </div>
   );
