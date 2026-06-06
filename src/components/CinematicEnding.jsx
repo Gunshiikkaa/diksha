@@ -6,6 +6,7 @@ export default function CinematicEnding({ memories, onViewTimeline }) {
   const [isThemeSongPlaying, setIsThemeSongPlaying] = useState(false);
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const iframeRef = useRef(null);
 
   // Intersection observer to trigger animate-in
   useEffect(() => {
@@ -125,6 +126,20 @@ export default function CinematicEnding({ memories, onViewTimeline }) {
     if (onViewTimeline) {
       onViewTimeline();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleToggleThemeSong = () => {
+    const nextPlaying = !isThemeSongPlaying;
+    setIsThemeSongPlaying(nextPlaying);
+    
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      const command = nextPlaying ? 'playVideo' : 'pauseVideo';
+      iframeRef.current.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: command,
+        args: []
+      }), '*');
     }
   };
 
@@ -635,7 +650,7 @@ export default function CinematicEnding({ memories, onViewTimeline }) {
             </button>
 
             <button
-              onClick={() => setIsThemeSongPlaying(!isThemeSongPlaying)}
+              onClick={handleToggleThemeSong}
               style={{
                 backgroundColor: isThemeSongPlaying ? 'rgba(229, 9, 20, 0.15)' : '#0c0c0c',
                 color: isThemeSongPlaying ? 'var(--netflix-red)' : '#ccc',
@@ -762,17 +777,16 @@ export default function CinematicEnding({ memories, onViewTimeline }) {
         </p>
       </div>
 
-      {isThemeSongPlaying && (
-        <iframe
-          width="1"
-          height="1"
-          src="https://www.youtube.com/embed/gkCKTuR-ECI?autoplay=1&enablejsapi=1"
-          title="Theme Song Audio"
-          frameBorder="0"
-          allow="autoplay"
-          style={{ position: 'absolute', top: '-9999px', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
-        ></iframe>
-      )}
+      <iframe
+        ref={iframeRef}
+        width="1"
+        height="1"
+        src="https://www.youtube.com/embed/gkCKTuR-ECI?enablejsapi=1"
+        title="Theme Song Audio"
+        frameBorder="0"
+        allow="autoplay"
+        style={{ position: 'absolute', top: '-9999px', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+      ></iframe>
 
       {/* Embedded CSS Animations */}
       <style>{`
