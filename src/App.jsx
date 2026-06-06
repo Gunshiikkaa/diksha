@@ -307,33 +307,33 @@ export default function App() {
       location: 'Home',
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
-      videoUrl: 'video/video1.mp4',
+      videoUrl: '/video/video1.mp4',
       objectPosition: 'top'
     },
     {
       id: 't2',
       title: 'The Night Everything Changed ✨',
       img: '/slideshow/slide6_v2.png',
-      desc: 'A birthday party that became our love story’s favorite episode—he got down on one knee, we danced till 6 AM, and a fairy tale to forever quietly began. ❤️🥂💍\n\n1 year to this day🤍🧿',
+      desc: 'A birthday party that became our love story\u2019s favorite episode\u2014he got down on one knee, we danced till 6 AM, and a fairy tale to forever quietly began. ❤️🥂💍\n\n1 year to this day🤍🧿',
       matchRate: '99.5% Match',
       year: '2024',
       location: 'Birthday Party',
       date: 'April 2025',
       tags: 'Proposal • Celebration • Love',
-      videoUrl: 'video/video2.mp4',
+      videoUrl: '/video/video2.mp4',
       objectPosition: 'center'
     },
     {
       id: 't3',
       title: 'The Alibaug Chapter 🤍',
       img: '/slideshow/IMG_8577.JPG.jpeg',
-      desc: 'What was supposed to be a pre-wedding shoot became one of the sweetest memories of our courtship. Between the chaos, the camera, the outfit changes, and my dramatic exhaustion (Ironically, after asking you not to get tired before finishing all the looks, I was the one ready to give up first, practically sobbing and begging), there was you—making every moment feel effortless, magical, and worth remembering forever. ✨❤️',
+      desc: 'What was supposed to be a pre-wedding shoot became one of the sweetest memories of our courtship. Between the chaos, the camera, the outfit changes, and my dramatic exhaustion (Ironically, after asking you not to get tired before finishing all the looks, I was the one ready to give up first, practically sobbing and begging), there was you\u2014making every moment feel effortless, magical, and worth remembering forever. ✨❤️',
       matchRate: '99.2% Match',
       year: '2025',
       location: 'Alibaug',
       date: 'Courtship',
       tags: 'Pre-Wedding • Fun • Effortless',
-      videoUrl: 'video/video3.mp4',
+      videoUrl: '/video/video3.mp4',
       objectPosition: 'top'
     },
     {
@@ -346,7 +346,7 @@ export default function App() {
       location: 'Wedding Venue',
       date: 'Sangeet Night',
       tags: 'Wedding Eve • Emotional • Calm',
-      videoUrl: 'video/video4.mp4',
+      videoUrl: '/video/video4.mp4',
       objectPosition: 'center'
     }
   ];
