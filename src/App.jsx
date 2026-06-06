@@ -308,7 +308,7 @@ export default function App() {
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
       videoUrl: '/video/video1.mp4',
-      objectPosition: 'top'
+      objectPosition: 'bottom'
     },
     {
       id: 't2',
@@ -321,7 +321,7 @@ export default function App() {
       date: 'April 2025',
       tags: 'Proposal • Celebration • Love',
       videoUrl: '/video/video2.mp4',
-      objectPosition: 'center'
+      objectPosition: 'bottom'
     },
     {
       id: 't3',
