@@ -565,7 +565,10 @@ export default function App() {
             </div>
 
             {/* Cinematic Ending Section */}
-            <CinematicEnding memories={[...trendingNowItems, ...continueWatchingItems]} />
+            <CinematicEnding 
+              memories={[...trendingNowItems, ...continueWatchingItems]} 
+              onViewTimeline={() => setActiveTab('timeline')}
+            />
           </>
         )}
 

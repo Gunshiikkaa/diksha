@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function CinematicEnding({ memories }) {
+export default function CinematicEnding({ memories, onViewTimeline }) {
   const [confetti, setConfetti] = useState([]);
   const [celebrationActive, setCelebrationActive] = useState(false);
   const [isThemeSongPlaying, setIsThemeSongPlaying] = useState(false);
@@ -119,6 +119,13 @@ export default function CinematicEnding({ memories }) {
     setTimeout(() => {
       setCelebrationActive(false);
     }, 4500);
+  };
+
+  const handleViewTimeline = () => {
+    if (onViewTimeline) {
+      onViewTimeline();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -597,7 +604,7 @@ export default function CinematicEnding({ memories }) {
             gap: '1rem'
           }}>
             <button
-              onClick={handleCelebrate}
+              onClick={handleViewTimeline}
               style={{
                 backgroundColor: 'var(--netflix-red)',
                 color: '#fff',
@@ -624,7 +631,7 @@ export default function CinematicEnding({ memories }) {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              Celebrate Us! 🥳
+              Our Timeline ⏳
             </button>
 
             <button
