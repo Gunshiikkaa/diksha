@@ -313,7 +313,7 @@ export default function App() {
     {
       id: 't2',
       title: 'The Night Everything Changed ✨',
-      img: '/slideshow/slide6_v2.png',
+      img: '/movie2.png',
       desc: 'A birthday party that became our love story\u2019s favorite episode\u2014he got down on one knee, we danced till 6 AM, and a fairy tale to forever quietly began. ❤️🥂💍\n\n1 year to this day🤍🧿',
       matchRate: '99.5% Match',
       year: '2024',
@@ -321,12 +321,12 @@ export default function App() {
       date: 'April 2025',
       tags: 'Proposal • Celebration • Love',
       videoUrl: '/video/movie2.mp4',
-      objectPosition: 'bottom'
+      objectPosition: 'center'
     },
     {
       id: 't3',
       title: 'The Alibaug Chapter 🤍',
-      img: '/slideshow/IMG_8577.JPG.jpeg',
+      img: '/movie3.png',
       desc: 'What was supposed to be a pre-wedding shoot became one of the sweetest memories of our courtship. Between the chaos, the camera, the outfit changes, and my dramatic exhaustion (Ironically, after asking you not to get tired before finishing all the looks, I was the one ready to give up first, practically sobbing and begging), there was you\u2014making every moment feel effortless, magical, and worth remembering forever. ✨❤️',
       matchRate: '99.2% Match',
       year: '2025',
@@ -334,12 +334,12 @@ export default function App() {
       date: 'Courtship',
       tags: 'Pre-Wedding • Fun • Effortless',
       videoUrl: '/video/video3.mp4',
-      objectPosition: 'top'
+      objectPosition: 'center'
     },
     {
       id: 't4',
       title: 'The Night Before Our Wedding',
-      img: '/wedding_moment.png',
+      img: '/movie4.png',
       desc: 'The night before our wedding was everything I could have wished for. There was music, laughter, endless celebrations, and a heart full of emotions. While I was a whirlwind of excitement and nerves, you stood beside me with your calmness and that reassuring smile that somehow makes everything feel okay. That night, more than ever, I realized that no matter how chaotic my emotions get, you know exactly how to hold my hand through them, I realised that your calm heart could handle every storm in mine. And if this was how we were starting forever, I knew I was exactly where I belonged. ❤️',
       matchRate: '100% Perfect',
       year: '2026',
