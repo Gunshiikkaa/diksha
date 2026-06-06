@@ -307,7 +307,7 @@ export default function App() {
       location: 'Home',
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
-      videoUrl: '/video/video1.mp4',
+      videoUrl: 'video/video1.mp4',
       objectPosition: 'top'
     },
     {
@@ -320,7 +320,7 @@ export default function App() {
       location: 'Birthday Party',
       date: 'April 2025',
       tags: 'Proposal • Celebration • Love',
-      videoUrl: '/video/video2.mp4',
+      videoUrl: 'video/video2.mp4',
       objectPosition: 'center'
     },
     {
@@ -333,7 +333,7 @@ export default function App() {
       location: 'Alibaug',
       date: 'Courtship',
       tags: 'Pre-Wedding • Fun • Effortless',
-      videoUrl: '/video/video3.mp4',
+      videoUrl: 'video/video3.mp4',
       objectPosition: 'top'
     },
     {
@@ -346,7 +346,7 @@ export default function App() {
       location: 'Wedding Venue',
       date: 'Sangeet Night',
       tags: 'Wedding Eve • Emotional • Calm',
-      videoUrl: '/video/video4.mp4',
+      videoUrl: 'video/video4.mp4',
       objectPosition: 'center'
     }
   ];
@@ -792,6 +792,7 @@ export default function App() {
               src={playingVideoUrl} 
               controls 
               autoPlay 
+              playsInline
               style={{ width: '100%', borderRadius: '8px', border: '1px solid #333', boxShadow: '0 10px 30px rgba(0,0,0,0.9)' }}
               onEnded={() => setPlayingVideoUrl(null)}
             />
