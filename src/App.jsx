@@ -307,7 +307,7 @@ export default function App() {
       location: 'Home',
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
-      videoUrl: '/video/video1.mp4',
+      videoUrl: '/video/movie1.mp4',
       objectPosition: 'center'
     },
     {
@@ -320,7 +320,7 @@ export default function App() {
       location: 'Birthday Party',
       date: 'April 2025',
       tags: 'Proposal • Celebration • Love',
-      videoUrl: '/video/video2.mp4',
+      videoUrl: '/video/movie2.mp4',
       objectPosition: 'bottom'
     },
     {
