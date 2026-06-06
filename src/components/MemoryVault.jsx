@@ -25,11 +25,10 @@ export default function MemoryVault({ onCardClick }) {
       category: 'Silly',
       date: '2024',
       location: 'On the road',
-      img: '/vault_activa_fall.jpg',
+      img: '/vault_activa_fall_v2.png',
       desc: 'The time I fell from your Activa TWICE.! You were so worried & me very normal coz I know I\'m clumsy 😂 That day you learned that you have to hold my hand like a baby everywhere we go 😂🙈 which you still do everyday 😘',
       matchRate: '100% Comedy',
-      year: '2024',
-      objectPosition: 'top'
+      year: '2024'
     },
     {
       id: 'v3',
