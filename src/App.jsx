@@ -321,7 +321,7 @@ export default function App() {
       location: 'Home',
       date: 'Oct 24, 2024',
       tags: 'Romantic • Sweet • Memories',
-      videoUrl: '/video/movie1.mp4',
+      videoUrl: 'https://drive.google.com/file/d/1RIXRlFFcTfhrjB9_YBg0k8_Jyrdfg7qA/view?usp=drive_link',
       objectPosition: 'center'
     },
     {
